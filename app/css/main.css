@@ -1,0 +1,86 @@
+/* Made by Dmitry Glinskiy, contact me at glinskiy.net */
+body {
+  background-color: #f1f1f1;
+ -webkit-print-color-adjust:exact;
+}
+
+h1 {
+  padding: 0.5em 0;
+}
+
+.pagebreak {
+  page-break-before: always;
+}
+
+.container {
+  width: 932px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+.logo {
+  padding: 12px 0 0;
+}
+
+.header {
+  text-align: center;
+  padding: 20px 10px 0 160px;
+  border-bottom: 1px solid #333;
+  margin: 0 15px 15px;
+}
+.header p {
+  margin: 0;
+}
+.logo-rp {
+  float: left;
+  width: 150px;
+  margin-left: -160px;
+}
+.addresses {
+  display: inline-block;
+  font-size: 85%;
+  line-height: 125%;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+/* Debug rulers */
+.ruler-a, .ruler-b {
+  width: 50px;
+  height: 50px;
+  float: left;
+  display: none;
+}
+.ruler-a {
+  background-color: #eee;
+}
+.ruler-b {
+  background-color: #fafafa;
+}
+
+@media print {
+  body {
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+  }
+
+  .container {
+    min-height: auto;
+    width: 900px;
+    max-width:900px;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .row, .col, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-12 {
+    padding: 0;
+    margin: 0;
+  }
+
+}
+
+/* Made by Dmitry Glinskiy, contact me at glinskiy.net */
