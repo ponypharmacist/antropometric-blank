@@ -12,23 +12,28 @@ h1 {
   page-break-before: always;
 }
 
-.container {
+.container-custom {
   width: 932px;
   min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 15px;
   background-color: #ffffff;
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
 }
 
+/* Шапка бланка */
 .logo {
   padding: 12px 0 0;
 }
 
 .header {
+  width: 100%;
   text-align: center;
-  padding: 20px 10px 0 160px;
-  border-bottom: 1px solid #333;
+  padding: 10px 10px 0 160px;
+  border-bottom: 1px solid #00807b;
   margin: 0 15px 15px;
+  font-size: 13px;
 }
 .header p {
   margin: 0;
@@ -46,6 +51,39 @@ h1 {
   padding-bottom: 15px;
 }
 
+/* Пациент - таблицы и формы */
+input.form-control {
+  display: inline-block;
+  max-width: 200px;
+  border: none;
+  background-color: #d9ffe0;
+  padding: 0.5rem 0.25rem;
+}
+
+/* Цветовая схема документа */
+h5 {
+  color: #00807b;
+}
+
+/* Прочие элементы */
+.element-remover {
+  position: absolute;
+  margin-left: -32px;
+  margin-top: 4px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #eee;
+  color: #999!important;
+  cursor: pointer;
+}
+.element-remover:hover {
+  background-color: #ad0000;
+  color: #fff!important;
+}
+
 /* Debug rulers */
 .ruler-a, .ruler-b {
   width: 50px;
@@ -60,6 +98,7 @@ h1 {
   background-color: #fafafa;
 }
 
+/* Все для печати */
 @media print {
   body {
     background-color: #fff;
@@ -67,9 +106,9 @@ h1 {
     margin: 0;
   }
 
-  .container {
+  .container-custom {
     min-height: auto;
-    width: 900px;
+    width: 900px!important;
     max-width:900px;
     border: none;
     padding: 0;
@@ -81,6 +120,32 @@ h1 {
     margin: 0;
   }
 
-}
+  .header {
+    margin: 0 0 15px;
+    padding: 0 0 0 160px;
+  }
 
+  .logo-rp {
+    margin-top: 10px;
+  }
+
+  p {
+    line-height: 1.5rem;
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+
+  input.form-control {
+    border: none;
+    background-color: #d9ffe0;
+    padding: 0;
+    height: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .element-remover {
+    display:none;
+  }
+}
 /* Made by Dmitry Glinskiy, contact me at glinskiy.net */
