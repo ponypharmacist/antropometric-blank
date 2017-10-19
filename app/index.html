@@ -16,7 +16,7 @@
           <img src="images/logo-rp.jpg" class="logo-rp" alt="Логотип НИИ" title="Логотип НИИ">
           <p>Министерство Здравоохранения Российской Федерации<br/>
           Федеральное Государственное Бюджетное Учреждение<br/>
-          «Федеральный научно-клинический центр детской гематологии, онкологии и иммунологии имени Дмитрия&nbsp;Рогачева»<br/>
+          «Федеральный научно-клинический центр детской гематологии, онкологии и иммунологии имени&nbsp;Дмитрия&nbsp;Рогачева»<br/>
 
           <b>«Лечебно-реабилитационный научный центр "Русское Поле"»</b><br/>
 
@@ -46,14 +46,212 @@
         <div class="col-6">
           <p>
             <label for="patient-name-1">Ф.И.О. пациента:</label>
-            <input type="text" class="form-control mr-4" id="patient-name-1" placeholder="Наташа Соколова">
+            <input type="text" class="form-control mr-4 copied-field" id="patient-name" placeholder="Наташа Соколова">
           </p>
         </div>
         <div class="col-6">
           <p>
             <label for="patient-id-1">Идентификационный номер:</label>
-            <input type="text" class="form-control" id="patient-id-1" placeholder="51346">
+            <input type="text" class="form-control copied-field" id="patient-id" placeholder="51346">
           </p>
+        </div>
+
+        <div class="col-12">
+          <div class="table-like table-like-1">
+            <div class="row-like thead-like">
+              <div class="col-8">Антропометрические показатели</div>
+              <div class="col-2 text-center">Абсолютное значение</div>
+              <div class="col-2 text-center is-hideable-col-1-2">Половозрастная процентиль <a id="hideable-col-1-2" class="element-remover">✕</a></div>
+            </div>
+            <div class="row-like is-hideable-1-1">
+              <div class="col-8 thead-col">Рост стоя (см) <a id="hideable-1-1" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-1-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-1-2">
+              <div class="col-8 thead-col">Рост сидя (см) <a id="hideable-1-2" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-1-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-1-3">
+              <div class="col-8 thead-col">Вес (кг) <a id="hideable-1-3" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-1-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-1-4">
+              <div class="col-8 thead-col">Индекс массы тела (BMI) <a id="hideable-1-4" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-1-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-1-5">
+              <div class="col-8 thead-col">Индекс талия-окружность бедер (WHR, waist-hip ratio) <a id="hideable-1-5" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-1-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-1-6">
+              <div class="col-8 thead-col">Окружность грудной клетки (вдох/выдох) (см) <a id="hideable-1-6" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-1-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-1-7">
+              <div class="col-8 thead-col">Экскурсия грудной клетки (см) <a id="hideable-1-7" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-1-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-1-8">
+              <div class="col-8 thead-col">Разница в относительной длине ног (см) <a id="hideable-1-8" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-1-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-1-9">
+              <div class="col-8 thead-col">Разница в абсолютной длине ног (см) <a id="hideable-1-9" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-1-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <p>&nbsp;</p>
+        </div>
+
+        <div class="col-6 table-br">
+          <div class="table-like">
+            <div class="row-like thead-like">
+              <div class="col-9">Соматоскопические показатели</div>
+              <div class="col-3"></div>
+            </div>
+            <div class="row-like is-hideable-2-1">
+              <div class="col-9 thead-col">Деформации грудной клетки <a id="hideable-2-1" class="element-remover">✕</a></div>
+              <div class="col-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-2-2">
+              <div class="col-9 thead-col" style="font-size:90%;">Сагиттальные отклонения оси позвоночника <a id="hideable-2-2" class="element-remover">✕</a></div>
+              <div class="col-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-2-3">
+              <div class="col-9 thead-col">Перекос таза <a id="hideable-2-3" class="element-remover">✕</a></div>
+              <div class="col-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-2-4">
+              <div class="col-9 thead-col">Форма грудной клетки <a id="hideable-2-4" class="element-remover">✕</a></div>
+              <div class="col-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="table-like is-hideable-table-3">
+            <div class="row-like thead-like">
+              <div class="col-9">&nbsp;</div>
+              <div class="col-3"><a id="hideable-table-3" class="element-remover">✕</a></div>
+            </div>
+            <div class="row-like is-hideable-2-5">
+              <div class="col-9 thead-col">Шейный лордоз <a id="hideable-2-5" class="element-remover">✕</a></div>
+              <div class="col-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-2-6">
+              <div class="col-9 thead-col">Грудной кифоз  <a id="hideable-2-6" class="element-remover">✕</a></div>
+              <div class="col-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-2-7">
+              <div class="col-9 thead-col">Поясничный лордоз <a id="hideable-2-7" class="element-remover">✕</a></div>
+              <div class="col-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-2-8">
+              <div class="col-9 thead-col">Выпрямленная спина <a id="hideable-2-8" class="element-remover">✕</a></div>
+              <div class="col-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <h5 class="h5-padded">Заключение</h5>
+          <p class="diagnosis-block is-hideable-d-1-1"><b>Физическое развитие</b> <a id="hideable-d-1-1" class="element-remover">✕</a><br/>
+          <input type="text" placeholder="..." class="form-control input-diagnosis">
+          <span class="diagnosis-hint">(резко снижено, снижено, в пределах поло-возрастной нормы, повышено, значительно повышено)</span></p>
+
+          <p class="diagnosis-block is-hideable-d-1-2"><b>Признаки висцерального ожирения</b> <a id="hideable-d-1-2" class="element-remover">✕</a><br/>
+          <input type="text" placeholder="..." class="form-control input-diagnosis">
+          <span class="diagnosis-hint">(отсутствуют, выражены незначительно, выражены значительно)</span></p>
+
+          <p class="diagnosis-block is-hideable-d-1-3"><b>Пропорции тела</b> <a id="hideable-d-1-3" class="element-remover">✕</a><br/>
+          <input type="text" placeholder="..." class="form-control input-diagnosis">
+          <span class="diagnosis-hint">(нарушены за счет отставания нижних конечностей, отставания туловища, не нарушены)</span></p>
+
+          <p class="diagnosis-block is-hideable-d-1-4"><b>Тип и глубина дыхания</b> <a id="hideable-d-1-4" class="element-remover">✕</a><br/>
+          <input type="text" placeholder="..." class="form-control input-diagnosis">
+          <span class="diagnosis-hint">(грудной или брюшной, симметричность экскурсии грудной клетки)</span></p>
+
+          <p class="diagnosis-block is-hideable-d-1-5"><b>Деформации опорно-двигательного аппарата</b> <a id="hideable-d-1-5" class="element-remover">✕</a><br/>
+          <input type="text" placeholder="..." class="form-control input-diagnosis">
+          <span class="diagnosis-hint">(не выявлены, выявлены (какие))</span></p>
+        </div>
+
+        <div class="col-6">
+          <p>Исследователь: <span class="doctor-copy">doctor-copy</span></p>
+        </div>
+        <div class="col-6">
+          <p>Дата исследования: <span class="date-copy">date-copy</span></p>
+        </div>
+      </div>
+
+      <div class="row pagebreak">
+        <div class="col-12">
+          <h5>Бланк антропометрического обследования<br/>
+          <span class="h5-note">(продолжение, лист 2 из 3)</span></h5>
         </div>
 
         <div class="col-6">
@@ -62,47 +260,7 @@
         <div class="col-6">
           <p>Идентификационный номер: <span class="patient-id-copy">id-copy</span></p>
         </div>
-
-        <div class="col-12">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Антропометрические показатели</th>
-                <th>Абсолютное значение</th>
-                <th>Половозрастная процентиль</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr id="is-hideable-1">
-                <th scope="row">
-                  <a id="hideable-1" class="element-remover">X</a>
-                  Text
-                </th>
-                <td>Mark</td>
-                <td>Otto</td>
-              </tr>
-              <tr id="is-hideable-2">
-                <th scope="row">
-                  <a id="hideable-2" class="element-remover">X</a>
-                  Text
-                </th>
-                <td>Mark</td>
-                <td>Otto</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div> <!-- /row -->
-      Рост стоя (см)
-      Рост сидя (см)
-      Вес (кг)
-      Индекс массы тела
-      Индекс талия-окружность бедер. WHR (waist-hip ratio)
-      Окружность грудной клетки (вдох/выдох) (см)
-      Экскурсия грудной клетки (см)
-      Разница в относительной длине ног (см)
-      Разница в абсолютной длине ног (см)
-
 
     </div><!-- /container -->
 
