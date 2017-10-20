@@ -26,20 +26,6 @@
         </div>
       </div>
 
-      <div class="row"> <!-- Debug grid -->
-        <div class="col-12">
-          <div class="ruler-a"></div> <div class="ruler-b"></div>
-          <div class="ruler-a"></div> <div class="ruler-b"></div>
-          <div class="ruler-a"></div> <div class="ruler-b"></div><!-- 300 -->
-          <div class="ruler-a"></div> <div class="ruler-b"></div>
-          <div class="ruler-a"></div> <div class="ruler-b"></div>
-          <div class="ruler-a"></div> <div class="ruler-b"></div><!-- 600 -->
-          <div class="ruler-a"></div> <div class="ruler-b"></div>
-          <div class="ruler-a"></div> <div class="ruler-b"></div>
-          <div class="ruler-a"></div> <div class="ruler-b"></div><!-- 900 -->
-        </div>
-      </div>
-
       <h5>Бланк антропометрического обследования</h5>
 
       <div class="row">
@@ -56,10 +42,10 @@
           </p>
         </div>
 
-        <div class="col-12">
+        <div class="col-12 is-hideable-table-1">
           <div class="table-like table-like-1">
             <div class="row-like thead-like">
-              <div class="col-8">Антропометрические показатели</div>
+              <div class="col-8">Антропометрические показатели <a id="hideable-table-1" class="element-remover">✕</a></div>
               <div class="col-2 text-center">Абсолютное значение</div>
               <div class="col-2 text-center is-hideable-col-1-2">Половозрастная процентиль <a id="hideable-col-1-2" class="element-remover">✕</a></div>
             </div>
@@ -147,14 +133,14 @@
           </div>
         </div>
 
-        <div class="col-12">
-          <p>&nbsp;</p>
+        <div class="col-12 is-hideable-table-1">
+          <p style="margin:0;padding:0;">&nbsp;</p>
         </div>
 
-        <div class="col-6 table-br">
+        <div class="col-6 table-br is-hideable-table-2">
           <div class="table-like">
             <div class="row-like thead-like">
-              <div class="col-9">Соматоскопические показатели</div>
+              <div class="col-9">Соматоскопические показатели <a id="hideable-table-2" class="element-remover">✕</a></div>
               <div class="col-3"></div>
             </div>
             <div class="row-like is-hideable-2-1">
@@ -184,11 +170,11 @@
           </div>
         </div>
 
-        <div class="col-6">
-          <div class="table-like is-hideable-table-3">
+        <div class="col-6 is-hideable-table-2">
+          <div class="table-like is-hideable-table-2-2">
             <div class="row-like thead-like">
               <div class="col-9">&nbsp;</div>
-              <div class="col-3"><a id="hideable-table-3" class="element-remover">✕</a></div>
+              <div class="col-3"><a id="hideable-table-2-2" class="element-remover">✕</a></div>
             </div>
             <div class="row-like is-hideable-2-5">
               <div class="col-9 thead-col">Шейный лордоз <a id="hideable-2-5" class="element-remover">✕</a></div>
@@ -217,7 +203,7 @@
           </div>
         </div>
 
-        <div class="col-12">
+        <div class="col-12 page-1-last-block">
           <h5 class="h5-padded">Заключение</h5>
           <p class="diagnosis-block is-hideable-d-1-1"><b>Физическое развитие</b> <a id="hideable-d-1-1" class="element-remover">✕</a><br/>
           <input type="text" placeholder="..." class="form-control input-diagnosis">
@@ -252,12 +238,14 @@
             <input type="text" class="form-control copied-field" id="date" placeholder="15 августа 2017">
           </p>
         </div>
-      </div>
+      </div> <!-- /row last in page 1 -->
 
-      <div class="row pagebreak">
+
+
+      <div class="row pagebreak is-hideable-page-2">
         <div class="col-12">
           <h5>Бланк антропометрического обследования<br/>
-          <span class="h5-note">(продолжение, лист 2 из 3)</span></h5>
+          <span class="h5-note">(продолжение, лист 2 из 3) <a id="hideable-page-2" class="element-remover">✕</a></span></h5>
         </div>
 
         <div class="col-6">
@@ -267,13 +255,423 @@
           <p>Идентификационный номер: <span class="patient-id-copy">id-copy</span></p>
         </div>
 
+        <div class="col-12 is-hideable-table-3">
+          <div class="table-like table-like-2">
+            <div class="row-like thead-like">
+              <div class="col-6">Гониометрические показатели <a id="hideable-table-3" class="element-remover">✕</a></div>
+              <div class="col-2 text-center">Абс. значение слева</div>
+              <div class="col-2 text-center">Абс. значение справа</div>
+              <div class="col-2 text-center is-hideable-col-3-3">Половозрастная процентиль <a id="hideable-col-3-3" class="element-remover">✕</a></div>
+            </div>
+
+            <div class="row-like is-hideable-3-1">
+              <div class="col-6 thead-col">Отведение плеча с лопаткой (град.) <a id="hideable-3-1" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-3-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-3-2">
+              <div class="col-6 thead-col">Сгибание в локтевом суставе (град.) <a id="hideable-3-2" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-3-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-3-3">
+              <div class="col-6 thead-col">Разгибание предплечья (град.) <a id="hideable-3-3" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-3-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-3-4">
+              <div class="col-6 thead-col">Сгибание в тазобедренном суставе (град.) <a id="hideable-3-4" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-3-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-3-5">
+              <div class="col-6 thead-col">Сгибание в коленном суставе (град.) <a id="hideable-3-5" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-3-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-3-6">
+              <div class="col-6 thead-col">Сгибание в голеностопном суставе (град.) <a id="hideable-3-6" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-3-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-3-7">
+              <div class="col-6 thead-col">Гибкость позвоночника (см) <a id="hideable-3-7" class="element-remover">✕</a></div>
+              <div class="col-4 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-3-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 is-hideable-table-3">
+          <p style="margin:0;padding:0;">&nbsp;</p>
+        </div>
+
+        <div class="col-12 is-hideable-table-4">
+          <div class="table-like table-like-2">
+            <div class="row-like thead-like">
+              <div class="col-6">Силовая выносливость <a id="hideable-table-4" class="element-remover">✕</a></div>
+              <div class="col-2 text-center">Абс. значение слева</div>
+              <div class="col-2 text-center">Абс. значение справа</div>
+              <div class="col-2 text-center is-hideable-col-4-3">Половозрастная процентиль <a id="hideable-col-4-3" class="element-remover">✕</a></div>
+            </div>
+
+            <div class="row-like is-hideable-4-1">
+              <div class="col-6 thead-col">Мышцы спины (сек) <a id="hideable-4-1" class="element-remover">✕</a></div>
+              <div class="col-4 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-4-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-4-2">
+              <div class="col-6 thead-col">Мышцы рук (сек) <a id="hideable-4-2" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-4-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-4-3">
+              <div class="col-6 thead-col">Мышцы ног (сек) <a id="hideable-4-3" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-4-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-4-4">
+              <div class="col-6 thead-col">Мышцы брюшного пресса (сек) <a id="hideable-4-4" class="element-remover">✕</a></div>
+              <div class="col-4 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-4-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-4-5">
+              <div class="col-6 thead-col">Становая сила (кг) <a id="hideable-4-5" class="element-remover">✕</a></div>
+              <div class="col-4 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-4-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-4-6">
+              <div class="col-6 thead-col">Сила кисти (кг) <a id="hideable-4-6" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-4-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 is-hideable-table-4">
+          <p style="margin:0;padding:0;">&nbsp;</p>
+        </div>
+
+        <div class="col-12 is-hideable-table-5">
+          <div class="table-like table-like-2">
+            <div class="row-like thead-like">
+              <div class="col-8">Толерантность к физическим нагрузкам <a id="hideable-table-5" class="element-remover">✕</a></div>
+              <div class="col-2 text-center">Абсолютное значение</div>
+              <div class="col-2 text-center is-hideable-col-5-2">Ожидаемое значение <a id="hideable-col-5-2" class="element-remover">✕</a></div>
+            </div>
+
+            <div class="row-like is-hideable-5-1">
+              <div class="col-8 thead-col">Пройденное расстояние (м) <a id="hideable-5-1" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-5-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-5-2">
+              <div class="col-8 thead-col">Время восстановления кардиореспираторных показателей (мин) <a id="hideable-5-2" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-5-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 page-2-last-block">
+          <h5 class="h5-padded">Заключение</h5>
+          <p class="diagnosis-block is-hideable-d-2-1"><b>Объем движений ограничен в суставах:</b> <a id="hideable-d-2-1" class="element-remover">✕</a><br/>
+          <input type="text" placeholder="..." class="form-control input-diagnosis"></p>
+
+          <p class="diagnosis-block is-hideable-d-2-2"><b>Силовая выносливость</b> <a id="hideable-d-2-2" class="element-remover">✕</a><br/>
+          <input type="text" placeholder="..." class="form-control input-diagnosis">
+          <span class="diagnosis-hint">(высокая, средняя, снижена в группах мышц)</span></p>
+
+          <p class="diagnosis-block is-hideable-d-2-3"><b>Переносимость физических нагрузок</b> <a id="hideable-d-2-3" class="element-remover">✕</a><br/>
+          <input type="text" placeholder="..." class="form-control input-diagnosis">
+          <span class="diagnosis-hint">(снижена, в пределах нормы, повышена)</span></p>
+        </div>
+
         <div class="col-6">
           <p>Исследователь: <span class="doctor-copy">doctor-copy</span></p>
         </div>
         <div class="col-6">
           <p>Дата исследования: <span class="date-copy">date-copy</span></p>
         </div>
-      </div> <!-- /row -->
+      </div> <!-- /row page 2 -->
+
+
+
+      <div class="row pagebreak is-hideable-page-3">
+        <div class="col-12">
+          <h5>Бланк антропометрического обследования<br/>
+          <span class="h5-note">(продолжение, лист 3 из 3) <a id="hideable-page-3" class="element-remover">✕</a></span></h5>
+        </div>
+
+        <div class="col-6">
+          <p>Ф.И.О. пациента: <span class="patient-name-copy">name-copy</span></p>
+        </div>
+        <div class="col-6">
+          <p>Идентификационный номер: <span class="patient-id-copy">id-copy</span></p>
+        </div>
+
+        <div class="col-12 is-hideable-table-6">
+          <div class="table-like table-like-2 table-like-3">
+            <div class="row-like thead-like">
+              <div class="col-4">Стабилометрические показатели  <a id="hideable-table-6" class="element-remover">✕</a></div>
+              <div class="col-4 text-center">Глаза открыты</div>
+              <div class="col-4 text-center is-hideable-col-6-2">Глаза закрыты <a id="hideable-col-6-2" class="element-remover">✕</a></div>
+            </div>
+            <div class="row-like thead-like">
+              <div class="col-4"></div>
+              <div class="col-4 col-4-special">
+                <div class="col-6 text-center">Абсол.</div>
+                <div class="col-6 text-center is-hideable-col-6-1-2">Процентиль <a id="hideable-col-6-1-2" class="element-remover">✕</a></div>
+              </div>
+              <div class="col-4 col-4-special is-hideable-col-6-2">
+                <div class="col-6 text-center">Абсол.</div>
+                <div class="col-6 text-center is-hideable-col-6-2-2">Процентиль <a id="hideable-col-6-2-2" class="element-remover">✕</a></div>
+              </div>
+            </div>
+
+            <div class="row-like is-hideable-6-1">
+              <div class="col-4 thead-col">Смещение по фронтали (см) <a id="hideable-6-1" class="element-remover">✕</a></div>
+              <div class="col-4 col-4-special">
+                <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+              </div>
+              <div class="col-4 col-4-special is-hideable-col-6-2">
+                <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+              </div>
+            </div>
+            <div class="row-like is-hideable-6-2">
+              <div class="col-4 thead-col">Смещение по сагиттали (cм) <a id="hideable-6-2" class="element-remover">✕</a></div>
+              <div class="col-4 col-4-special">
+                <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+              </div>
+              <div class="col-4 col-4-special is-hideable-col-6-2">
+                <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+              </div>
+            </div>
+            <div class="row-like is-hideable-6-3">
+              <div class="col-4 thead-col">Площадь эллипса (см<sup>2</sup>) <a id="hideable-6-3" class="element-remover">✕</a></div>
+              <div class="col-4 col-4-special">
+                <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+              </div>
+              <div class="col-4 col-4-special is-hideable-col-6-2">
+                <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+              </div>
+            </div>
+            <div class="row-like is-hideable-6-4">
+              <div class="col-4 thead-col" style="font-size:85%;">Средняя скорость центра давления (см/сек) <a id="hideable-6-4" class="element-remover">✕</a></div>
+              <div class="col-4 col-4-special">
+                <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+              </div>
+              <div class="col-4 col-4-special is-hideable-col-6-2">
+                <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" placeholder="..." class="form-control"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <h5 class="h5-padded">Заключение по постуральному контролю</h5>
+          <p class="diagnosis-block is-hideable-d-3-1"><b>Положение центра давления</b> <a id="hideable-d-3-1" class="element-remover">✕</a><br/>
+          <input type="text" placeholder="..." class="form-control input-diagnosis">
+          <span class="diagnosis-hint">(правильное, смещение по сагиттали, фронтали)</span></p>
+
+          <p class="diagnosis-block is-hideable-d-3-2"><b>Стабильность баланса</b> <a id="hideable-d-3-2" class="element-remover">✕</a><br/>
+          <input type="text" placeholder="..." class="form-control input-diagnosis">
+          <span class="diagnosis-hint">(высокая, средняя, низкая)</span></p>
+
+          <p class="diagnosis-block is-hideable-d-3-3"><b>Приоритетная сенсорная система</b> <a id="hideable-d-3-3" class="element-remover">✕</a><br/>
+          <input type="text" placeholder="..." class="form-control input-diagnosis">
+          <span class="diagnosis-hint">(зрение, проприорецепция)</span></p>
+        </div>
+
+        <div class="col-12 is-hideable-table-7">
+          <div class="table-like table-like-2">
+            <div class="row-like thead-like">
+              <div class="col-6">Биоимпеданс <a id="hideable-table-7" class="element-remover">✕</a></div>
+              <div class="col-2 text-center">Абсолютное значение</div>
+              <div class="col-2 text-center is-hideable-col-7-2">% к массе тела <a id="hideable-col-7-2" class="element-remover">✕</a></div>
+              <div class="col-2 text-center is-hideable-col-7-3">Половозрастная процентиль <a id="hideable-col-7-3" class="element-remover">✕</a></div>
+            </div>
+
+            <div class="row-like is-hideable-7-1">
+              <div class="col-6 thead-col">Жировая масса (кг) <a id="hideable-7-1" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-7-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-7-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-7-2">
+              <div class="col-6 thead-col">Тощая масса (кг) <a id="hideable-7-2" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-7-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-7-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-7-3">
+              <div class="col-6 thead-col">Скелетно-мышечная масса <a id="hideable-7-3" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-7-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-7-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-7-4">
+              <div class="col-6 thead-col">Активная клеточная масса (кг) <a id="hideable-7-4" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-7-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-7-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+            <div class="row-like is-hideable-7-5">
+              <div class="col-6 thead-col">Фазовый угол (градусы) <a id="hideable-7-5" class="element-remover">✕</a></div>
+              <div class="col-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-7-2 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+              <div class="col-2 is-hideable-col-7-3 input-cell">
+                <input type="text" placeholder="..." class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 page-3-last-block">
+          <h5 class="h5-padded">Заключение</h5>
+          <p class="diagnosis-block is-hideable-d-4-1"><b>Уровень тренированности и готовности к физическим нагрузкам</b> <a id="hideable-d-4-1" class="element-remover">✕</a><br/>
+          <input type="text" placeholder="..." class="form-control input-diagnosis">
+          <span class="diagnosis-hint">(высокая, средняя, низкая)</span></p>
+
+          <p class="diagnosis-block is-hideable-d-4-2"><b>Уровень двигательной активности</b> <a id="hideable-d-4-2" class="element-remover">✕</a><br/>
+          <input type="text" placeholder="..." class="form-control input-diagnosis">
+          <span class="diagnosis-hint">(снижен, адекватен, повышен)</span></p>
+
+          <p class="diagnosis-block is-hideable-d-4-3"><b>Риск развития метаболического синдрома</b> <a id="hideable-d-4-3" class="element-remover">✕</a><br/>
+          <input type="text" placeholder="..." class="form-control input-diagnosis">
+          <span class="diagnosis-hint">(есть, нет)</span></p>
+        </div>
+
+        <div class="col-6">
+          <p>Исследователь: <span class="doctor-copy">doctor-copy</span></p>
+        </div>
+        <div class="col-6">
+          <p>Дата исследования: <span class="date-copy">date-copy</span></p>
+        </div>
+      </div>
 
     </div><!-- /container -->
 
