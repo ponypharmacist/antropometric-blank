@@ -76,7 +76,7 @@ p {
   background-color: #fff;
 }
 .row-like:nth-child(even) {
-  background-color: #fafafa;
+  background-color: #eee;
 }
 .row-like > div {
   padding: 6px 8px;
@@ -196,6 +196,16 @@ h5 {
   top: auto;
   margin-top: auto;
   right: auto;
+}
+
+.doctor-signature {
+  border-top: 1px solid #666;
+  color: #666;
+  padding: 0 40px;
+  font-size: 13px;
+  line-height: 14px;
+  position: relative;
+  top: 18px;
 }
 
 
