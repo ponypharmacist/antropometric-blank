@@ -105,6 +105,17 @@ input.form-control {
   height: 32px;
   padding: 8px 6px;
 }
+input.short-field {
+  max-width: 30px;
+}
+select.select-control {
+  display: inline-block;
+  width: 120px;
+  border: none;
+  background-color: rgba(0,0,0,0.05);
+  height: 32px;
+  padding: 0px 6px;
+}
 .row-like input.form-control {
   max-width: 100%;
 }
@@ -208,6 +219,13 @@ h5 {
   top: 18px;
 }
 
+.patient-data {
+  padding-top: 0px;
+}
+.patient-data p {
+  margin: 0;
+}
+
 
 /* Все для печати */
 @media print {
@@ -254,6 +272,13 @@ h5 {
     height: 34px;
     background-color: rgba(0,0,0,0.05);
     padding: 12px 6px!important;
+  }
+  select.select-control {
+    background-color: transparent;
+    -webkit-appearance: none;
+  }
+  input.short-field {
+    text-align: right;
   }
 
   .element-remover,

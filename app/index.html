@@ -28,11 +28,11 @@
 
       <h5>Бланк антропометрического обследования</h5>
 
-      <div class="row">
+      <div class="row patient-data">
         <div class="col-6">
           <p>
             <label for="patient-name-1">Ф.И.О. пациента:</label>
-            <input type="text" class="form-control mr-4 copied-field" id="patient-name" placeholder="Наташа Соколова">
+            <input type="text" class="form-control copied-field" id="patient-name" placeholder="Наташа Соколова">
           </p>
         </div>
         <div class="col-6">
@@ -41,7 +41,26 @@
             <input type="text" class="form-control copied-field" id="patient-id" placeholder="51346">
           </p>
         </div>
+        <div class="col-4">
+          <p>
+            <label for="patient-name-1">Пол:</label>
+            <select class="select-control" id="patient-gender">
+              <option value="null" selected></option>
+              <option value="male">Мужской</option>
+              <option value="female">Женский</option>
+            </select>
+          </p>
+        </div>
+        <div class="col-8">
+          <p>
+            <label for="patient-id-1">Возраст:</label>
+            <input type="text" class="form-control copied-field short-field" id="patient-age-years" maxlength="2" placeholder="..."> лет,
+            <input type="text" class="form-control copied-field short-field" id="patient-age-months" maxlength="2" value="0"> мес.
+          </p>
+        </div>
+      </div>
 
+      <div class="row">
         <div class="col-12 is-hideable-table-1">
           <div class="table-like table-like-1">
             <div class="row-like thead-like">
@@ -125,7 +144,7 @@
         </div>
 
         <div class="col-12 is-hideable-table-1">
-          <p style="margin:0;padding:0;">&nbsp;</p>
+          <p style="margin:0;padding:0;line-height:12px;">&nbsp;</p>
         </div>
 
         <div class="col-6 table-br is-hideable-table-2">
@@ -246,11 +265,12 @@
           <span class="h5-note">(продолжение, лист 2 из 3) <a id="hideable-page-2" class="element-remover">✕</a></span></h5>
         </div>
 
-        <div class="col-6">
-          <p>Ф.И.О. пациента: <span class="patient-name-copy">name-copy</span></p>
+        <div class="col-7">
+          <p>Ф.И.О. пациента: <span class="patient-name-copy"></span><br/>
+          Пол: <span class="patient-gender-copy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>. Возраст: <span class="patient-age-years-copy">&nbsp;&nbsp;&nbsp;</span> лет, <span class="patient-age-months-copy">0</span> мес.</p>
         </div>
-        <div class="col-6">
-          <p>Идентификационный номер: <span class="patient-id-copy">id-copy</span></p>
+        <div class="col-5">
+          <p>Идентификационный номер: <span class="patient-id-copy"></span></p>
         </div>
 
         <div class="col-12 is-hideable-table-3">
@@ -513,10 +533,11 @@
         </div>
 
         <div class="col-6">
-          <p>Ф.И.О. пациента: <span class="patient-name-copy">name-copy</span></p>
+          <p>Ф.И.О. пациента: <span class="patient-name-copy"></span><br/>
+          Пол: <span class="patient-gender-copy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>. Возраст: <span class="patient-age-years-copy">&nbsp;&nbsp;&nbsp;</span> лет, <span class="patient-age-months-copy">0</span> мес.</p>
         </div>
         <div class="col-6">
-          <p>Идентификационный номер: <span class="patient-id-copy">id-copy</span></p>
+          <p>Идентификационный номер: <span class="patient-id-copy"></span></p>
         </div>
 
         <div class="col-12 is-hideable-table-6">
@@ -598,6 +619,7 @@
           <p class="diagnosis-block is-hideable-d-3-3"><b>Приоритетная сенсорная система</b> <a id="hideable-d-3-3" class="element-remover">✕</a><br/>
           <input type="text" placeholder="..." class="form-control input-diagnosis">
           <span class="diagnosis-hint">(зрение, проприорецепция)</span></p>
+          <p style="margin:0;line-height:14px;">&nbsp;</p>
         </div>
 
         <div class="col-12 is-hideable-table-7">
