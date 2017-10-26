@@ -108,6 +108,11 @@ input.form-control {
 input.short-field {
   max-width: 30px;
 }
+input.inline-mini {
+  width: 90px;
+  height: 20px;
+}
+
 select.select-control {
   display: inline-block;
   width: 120px;
@@ -279,6 +284,9 @@ h5 {
   }
   input.short-field {
     text-align: right;
+  }
+  input.inline-mini {
+    display: none;
   }
 
   .element-remover,

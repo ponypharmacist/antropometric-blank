@@ -71,7 +71,7 @@
             <div class="row-like is-hideable-1-1">
               <div class="col-8 thead-col">Рост стоя (см) <a id="hideable-1-1" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="height-standing" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-1-2 input-cell">
                 <input type="text" placeholder="..." class="form-control">
@@ -89,7 +89,7 @@
             <div class="row-like is-hideable-1-3">
               <div class="col-8 thead-col">Вес (кг) <a id="hideable-1-3" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="patient-weight" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-1-2 input-cell">
                 <input type="text" placeholder="..." class="form-control">
@@ -98,16 +98,20 @@
             <div class="row-like is-hideable-1-4">
               <div class="col-8 thead-col">Индекс массы тела (BMI) <a id="hideable-1-4" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="body-mass-index" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-1-2 input-cell">
                 <input type="text" placeholder="..." class="form-control">
               </div>
             </div>
             <div class="row-like is-hideable-1-5">
-              <div class="col-8 thead-col">Индекс талия-окружность бедер (WHR, waist-hip ratio) <a id="hideable-1-5" class="element-remover">✕</a></div>
+              <div class="col-8 thead-col">
+                Индекс талия-окружность бедер (WHR)
+                <input id="waist-length" type="text" placeholder="Талия (см)" class="form-control inline-mini">
+                <input id="hips-length" type="text" placeholder="Бедра (см)" class="form-control inline-mini">
+                <a id="hideable-1-5" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="waist-hip-ratio" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-1-2 input-cell">
                 <input type="text" placeholder="..." class="form-control">
