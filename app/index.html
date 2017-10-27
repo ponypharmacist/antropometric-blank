@@ -31,19 +31,19 @@
       <div class="row patient-data">
         <div class="col-6">
           <p>
-            <label for="patient-name-1">Ф.И.О. пациента:</label>
+            <label for="patient-name">Ф.И.О. пациента:</label>
             <input type="text" class="form-control copied-field" id="patient-name" placeholder="Наташа Соколова">
           </p>
         </div>
-        <div class="col-6">
+        <div class="col-6 text-right">
           <p>
-            <label for="patient-id-1">Идентификационный номер:</label>
-            <input type="text" class="form-control copied-field" id="patient-id" placeholder="51346">
+            <label for="patient-id">Идентификационный номер:</label>
+            <input type="text" class="form-control medium-field copied-field" id="patient-id" placeholder="00000">
           </p>
         </div>
-        <div class="col-4">
+        <div class="col-3">
           <p>
-            <label for="patient-name-1">Пол:</label>
+            <label for="patient-gender">Пол:</label>
             <select class="select-control" id="patient-gender">
               <option value="null" selected></option>
               <option value="male">Мужской</option>
@@ -51,11 +51,17 @@
             </select>
           </p>
         </div>
-        <div class="col-8">
+        <div class="col-3">
           <p>
-            <label for="patient-id-1">Возраст:</label>
+            <label for="patient-age-years">Возраст:</label>
             <input type="text" class="form-control copied-field short-field" id="patient-age-years" maxlength="2" placeholder="..."> лет,
             <input type="text" class="form-control copied-field short-field" id="patient-age-months" maxlength="2" value="0"> мес.
+          </p>
+        </div>
+        <div class="col-6 text-right">
+          <p>
+            <label for="patient-diagnosis">Диагноз:</label>
+            <input type="text" class="form-control medium-field copied-field" id="patient-diagnosis" placeholder="МКБ">
           </p>
         </div>
       </div>
@@ -270,11 +276,13 @@
         </div>
 
         <div class="col-7">
-          <p>Ф.И.О. пациента: <span class="patient-name-copy"></span><br/>
-          Пол: <span class="patient-gender-copy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>. Возраст: <span class="patient-age-years-copy">&nbsp;&nbsp;&nbsp;</span> лет, <span class="patient-age-months-copy">0</span> мес.</p>
+          <p>Ф.И.О. пациента: <span class="pasted-text patient-name-copy"></span><br/>
+          Пол: <span class="pasted-text patient-gender-copy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.<br/>
+          Возраст: <span class="pasted-text patient-age-years-copy">&nbsp;&nbsp;&nbsp;</span> лет, <span class="pasted-text patient-age-months-copy">0</span> мес.</p>
         </div>
         <div class="col-5">
-          <p>Идентификационный номер: <span class="patient-id-copy"></span></p>
+          <p>Идентификационный номер: <span class="pasted-text patient-id-copy"></span><br/>
+          Диагноз: <span class="pasted-text patient-diagnosis-copy"></span></p>
         </div>
 
         <div class="col-12 is-hideable-table-3">
@@ -362,7 +370,7 @@
         </div>
 
         <div class="col-12 is-hideable-table-3">
-          <p style="margin:0;padding:0;">&nbsp;</p>
+          <p style="margin:0;padding:0;line-height:20px;">&nbsp;</p>
         </div>
 
         <div class="col-12 is-hideable-table-4">
@@ -433,7 +441,7 @@
                 <input type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 input-cell is-hideable-4-col-3b">
-                <input type="text" placeholder="..." class="form-control"> <!-- Процентиль -->
+                <input type="text" placeholder="..." class="form-control">
               </div>
             </div>
             <div class="row-like is-hideable-4-4">
@@ -442,7 +450,7 @@
                 <input type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 input-cell is-hideable-4-col-3b">
-                <input type="text" placeholder="..." class="form-control"> <!-- Процентиль -->
+                <input type="text" placeholder="..." class="form-control">
               </div>
             </div>
             <div class="row-like is-hideable-4-5">
@@ -451,7 +459,7 @@
                 <input type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 input-cell is-hideable-4-col-3b">
-                <input type="text" placeholder="..." class="form-control"> <!-- Процентиль -->
+                <input type="text" placeholder="..." class="form-control">
               </div>
             </div>
             <div class="row-like is-hideable-4-7">
@@ -460,14 +468,14 @@
                 <input type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 input-cell is-hideable-4-col-3b">
-                <input type="text" placeholder="..." class="form-control"> <!-- Процентиль -->
+                <input type="text" placeholder="..." class="form-control">
               </div>
             </div>
           </div>
         </div>
 
         <div class="col-12 is-hideable-table-4">
-          <p style="margin:0;padding:0;">&nbsp;</p>
+          <p style="margin:0;padding:0;line-height:20px;">&nbsp;</p>
         </div>
 
         <div class="col-12 is-hideable-table-5">
@@ -537,11 +545,13 @@
         </div>
 
         <div class="col-6">
-          <p>Ф.И.О. пациента: <span class="patient-name-copy"></span><br/>
-          Пол: <span class="patient-gender-copy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>. Возраст: <span class="patient-age-years-copy">&nbsp;&nbsp;&nbsp;</span> лет, <span class="patient-age-months-copy">0</span> мес.</p>
+          <p>Ф.И.О. пациента: <span class="pasted-text patient-name-copy"></span><br/>
+          Пол: <span class="pasted-text patient-gender-copy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.<br/>
+          Возраст: <span class="pasted-text patient-age-years-copy">&nbsp;&nbsp;&nbsp;</span> лет, <span class="pasted-text patient-age-months-copy">0</span> мес.</p>
         </div>
         <div class="col-6">
-          <p>Идентификационный номер: <span class="patient-id-copy"></span></p>
+          <p>Идентификационный номер: <span class="pasted-text patient-id-copy"></span><br/>
+          Диагноз: <span class="pasted-text patient-diagnosis-copy"></span></p>
         </div>
 
         <div class="col-12 is-hideable-table-6">
