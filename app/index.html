@@ -465,10 +465,10 @@
             <div class="row-like is-hideable-4-7">
               <div class="col-8 thead-col">Гибкость позвоночника (см) <a id="hideable-4-7" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="patient-spine_flexibility" type="text" placeholder="..." class="form-control" onchange="fillPercentile('spine_flexibility','PhysicalAttributes');">
               </div>
               <div class="col-2 input-cell is-hideable-4-col-3b">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="percentile-spine_flexibility" type="text" placeholder="..." class="form-control">
               </div>
             </div>
           </div>
@@ -565,11 +565,11 @@
               <div class="col-4"></div>
               <div class="col-4 col-4-special">
                 <div class="col-6 text-center">Абсол.</div>
-                <div class="col-6 text-center is-hideable-col-6-1-2">Процентиль <a id="hideable-col-6-1-2" class="element-remover">✕</a></div>
+                <div class="col-6 text-center is-hideable-col-6-1-2">Реф. значения <a id="hideable-col-6-1-2" class="element-remover">✕</a></div>
               </div>
               <div class="col-4 col-4-special is-hideable-col-6-2">
                 <div class="col-6 text-center">Абсол.</div>
-                <div class="col-6 text-center is-hideable-col-6-2-2">Процентиль <a id="hideable-col-6-2-2" class="element-remover">✕</a></div>
+                <div class="col-6 text-center is-hideable-col-6-2-2">Реф. значения <a id="hideable-col-6-2-2" class="element-remover">✕</a></div>
               </div>
             </div>
 
@@ -577,44 +577,44 @@
               <div class="col-4 thead-col">Смещение по фронтали (мм) <a id="hideable-6-1" class="element-remover">✕</a></div>
               <div class="col-4 col-4-special">
                 <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
-                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" value="0 ± " class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" value="0 ± 2.5 мм" class="form-control"></div>
               </div>
               <div class="col-4 col-4-special is-hideable-col-6-2">
                 <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
-                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" value="0 ± " class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" value="0 ± 3.1 мм" class="form-control"></div>
               </div>
             </div>
             <div class="row-like is-hideable-6-2">
               <div class="col-4 thead-col">Смещение по сагиттали (мм) <a id="hideable-6-2" class="element-remover">✕</a></div>
               <div class="col-4 col-4-special">
                 <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
-                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" value="0 ± " class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" value="-40 ± 15 мм" class="form-control"></div>
               </div>
               <div class="col-4 col-4-special is-hideable-col-6-2">
                 <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
-                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" value="0 ± " class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" value="-42 ± 17 мм" class="form-control"></div>
               </div>
             </div>
             <div class="row-like is-hideable-6-3">
               <div class="col-4 thead-col">Площадь эллипса (мм<sup>2</sup>) <a id="hideable-6-3" class="element-remover">✕</a></div>
               <div class="col-4 col-4-special">
                 <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
-                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" value="0 ± " class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" value="132" class="form-control"></div>
               </div>
               <div class="col-4 col-4-special is-hideable-col-6-2">
                 <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
-                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" value="0 ± " class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" value="164" class="form-control"></div>
               </div>
             </div>
             <div class="row-like is-hideable-6-4">
               <div class="col-4 thead-col" style="font-size:85%;">Средняя скорость центра давления (мм<sup>2</sup>) <a id="hideable-6-4" class="element-remover">✕</a></div>
               <div class="col-4 col-4-special">
                 <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
-                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" value="0 ± " class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" value="10.4" class="form-control"></div>
               </div>
               <div class="col-4 col-4-special is-hideable-col-6-2">
                 <div class="col-6 input-cell"><input type="text" placeholder="..." class="form-control"></div>
-                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" value="0 ± " class="form-control"></div>
+                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" value="13.6" class="form-control"></div>
               </div>
             </div>
           </div>
