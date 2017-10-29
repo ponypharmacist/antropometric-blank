@@ -28,6 +28,10 @@ function range(x, min, max) {
   return x >= min && x <= max;
 };
 
+function rangeShort(x, min, max) {
+  return x >= min && x < max;
+};
+
 function getSumm(a,b) {
   return a + b;
 };
@@ -42,13 +46,21 @@ function setAgeConverted (a,b) {
 
 function calculateBMI () {
   patientBMI = patientWeight / (heightStandingMeters * heightStandingMeters);
-  $('#body-mass-index').val(patientBMI);
+  $('#body-mass-index').val(patientBMI.toFixed(1));
 };
 
 function calculateWHR () {
   patientWHR = waistLength / hipsLength;
   $('#waist-hip-ratio').val(patientWHR.toFixed(2));
 };
+
+//=========================================
+// Выставляем референсные значения
+//=========================================
+function fillReferenceValues() {
+  fillReferenceInterval('height', ageRangeTableHeight);
+  fillReferenceInterval('weight', ageRangeTableHeight);
+}
 
 //=========================================
 // Основные реакции на изменения полей
@@ -71,6 +83,8 @@ $(document).ready(function(){
     ageYears = parseInt(this.value);
     ageMonths = parseInt($('#patient-age-months').val());
     setAgeConverted (ageYears, ageMonths);
+
+    genderSelected && ageConverted && fillReferenceValues();
   });
 
   // Реагируем на смену возраста
@@ -78,6 +92,8 @@ $(document).ready(function(){
     ageMonths = parseInt(this.value);
     ageYears = parseInt($('#patient-age-years').val());
     setAgeConverted (ageYears, ageMonths);
+
+    genderSelected && ageConverted && fillReferenceValues();
   });
 
   // Реагируем на смену пола
@@ -88,9 +104,11 @@ $(document).ready(function(){
     } else if (genderSelected == 'female') {
       genderSelectedRus = 'Женский';
     } else {
-      genderSelectedRus = 'Ошибочка!';
+      genderSelectedRus = 'Ошибочка, не выбран пол!';
     }
     $('.patient-gender-copy').html(genderSelectedRus);
+
+    genderSelected && ageConverted && fillReferenceValues();
   });
 
   // Считаем Body Mass Index (BMI)
