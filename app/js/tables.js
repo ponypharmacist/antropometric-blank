@@ -15,34 +15,43 @@ function getAgeGroup (ageRangeTable) {
   let index;
   for (index = 0; index < ageRangeTable.length - 1; index++) {
     if (rangeShort(ageConverted, ageRangeTable[index], ageRangeTable[index + 1])) {
-      return window[percentilesPhysicalAttributes][index];
-    } else {
-    };
-  };
-};
-
-function getPercentile (ageRangeTable) {
-  // передаем сюда ИНДЕКС под-массива значений, уже вычисленный на основе возрастного интервала
-  // передаем сюда ЗНАЧЕНИЕ показателя реального пациента
-  let index;
-  for (index = 0; index < ageRangeTable.length - 1; index++) {
-    if (rangeShort(ageConverted, ageRangeTable[index], ageRangeTable[index + 1])) {
       return index;
     } else {
     };
   };
 };
 
+function getPercentile (patientParameterValue, parameterValuesArray, categoryName) {
+  // передаем сюда ИНДЕКС под-массива значений, уже вычисленный на основе возрастного интервала
+  // передаем сюда ЗНАЧЕНИЕ показателя реального пациента
+  let index;
+  let percentilesTableName = ('percentiles' + categoryName);
+  for (index = 0; index < parameterValuesArray.length - 1; index++) {
+    if (rangeShort(patientParameterValue, parameterValuesArray[index], parameterValuesArray[index + 1])) {
+      return window[percentilesTableName][index];
+    } else {
+    };
+  };
+};
+
 // Процентили
-function fillPercentile (parameterName, ageRangeTable) {
+function fillPercentile (parameterName, categoryName) {
   let patientParameterValue = $('#patient-' + parameterName).val();
-  let percentileTable = 'table_' + parameterName + '_' + genderSelected;
-  console.log('Percentile Table: ' + percentileTable);
-  let percentileTableIndex = getAgeGroup(ageRangeTable);
-  console.log('Percentile Table Index: ' + percentileTableIndex);
-  let percentileInterval = window[percentileTable][percentileTableIndex];
+
+  let parametersTable = 'table_' + parameterName + '_' + genderSelected;
+  console.log('Parameters Table: ' + parametersTable);
+
+  let ageRangeForCategory = 'ageRangeTable' + categoryName;
+  let parametersTableIndex = getAgeGroup(window[ageRangeForCategory]);
+  console.log('Parameters Table Index: ' + parametersTableIndex);
+
+  let parameterValuesArray = window[parametersTable][parametersTableIndex];
+  console.log('Parameter Values Array: ' + parameterValuesArray);
+
+  let percentileInterval = getPercentile(patientParameterValue, parameterValuesArray, categoryName);
   console.log('percentileInterval: ' + percentileInterval);
-  $('#reference-' + parameterName).val(percentileInterval);
+
+  $('#percentile-' + parameterName).val(percentileInterval);
 };
 
 //==================================================================================
@@ -255,15 +264,14 @@ var percentilesPhysicalAttributes = [
 // Мышцы спины (сек), Мальчики
 var table_back_strength_male = [
   [0, 7, 11, 21, 31, 50, 71, 85],
-  8,
-  9,
-  10,
-  11,
-  12,
-  13,
-  14,
-  15,
-  16,
-  17,
-  20
+  [0, 10, 16, 26, 38, 51, 79, 122],
+  [0, 15, 20, 30, 47.5, 63, 86, 118],
+  [0, 12.3, 22, 35, 64, 84.5, 125, 155],
+  [0, 19, 30, 45, 72, 102, 140, 180],
+  [0, 19, 27, 60, 82.5, 123, 153.5, 187],
+  [0, 22, 30, 46, 84.5,	117, 156.5, 190],
+  [0, 14, 30, 52.4,	80, 110, 142, 201],
+  [0, 17, 42, 64, 90, 121, 150, 181],
+  [0, 35, 48, 59, 78, 110, 134, 158],
+  [0, 30, 47, 63, 83, 116, 132, 172]
 ];
