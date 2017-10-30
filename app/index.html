@@ -14,15 +14,14 @@
       <div class="row">
         <div class="header">
           <img src="images/logo-rp.jpg" class="logo-rp" alt="Логотип НИИ" title="Логотип НИИ">
-          <p>Министерство Здравоохранения Российской Федерации<br/>
-          Федеральное Государственное Бюджетное Учреждение<br/>
-          «Федеральный научно-клинический центр детской гематологии, онкологии и иммунологии имени&nbsp;Дмитрия&nbsp;Рогачева»<br/>
+          <p>Федеральное государственное бюджетное учреждение<br/>
+          <b>«Национальный медицинский исследовательский центр детской гематологии, онкологии и&nbsp;иммунологии имени&nbsp;Дмитрия&nbsp;Рогачева»</b><br/>
+          Министерства Здравоохранения Российской Федерации<br/>
 
-          <b>«Лечебно-реабилитационный научный центр "Русское Поле"»</b><br/>
-
-          <span class="addresses">(ЛРНЦ «Русское поле» ФГБУ ФНКЦ ДГОИ им. Дмитрия Рогачева Минздрава России)<br/>
-          142321, Московская область, Чеховский район, С.П. Стремиловское, д. Гришенки.<br/>
-          Телефон: 8 (495) 797-92-33, факс: 8 (495) 787-55-16, e-mail: russkoe-pole@mail.ru</span></p>
+          <span class="addresses">(ФГБУ  «НМИЦ  ДГОИ им. Дмитрия Рогачева»  Минздрава России)<br/>
+          117198, г. Москва, ул. Саморы Машела,&nbsp;д.1.<br/>
+          Телефон: 8&nbsp;(495)&nbsp;937-50-24, факс: 8&nbsp;(495)&nbsp;936-22-36, e-mail:&nbsp;info@niidg.ru<br/>
+          ОКПО 13157861, ОГРН 1027739507212, ИНН/КПП 7728008953/772801001</span></p>
         </div>
       </div>
 
@@ -107,7 +106,7 @@
                 <input id="body-mass-index" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-1-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="reference-bmi" type="text" placeholder="..." class="form-control">
               </div>
             </div>
             <div class="row-like is-hideable-1-5">
@@ -120,7 +119,7 @@
                 <input id="waist-hip-ratio" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-1-2 input-cell">
-                <input type="text" class="form-control" value="0.85">
+                <input id="reference-whr" type="text" class="form-control" placeholder="..." >
               </div>
             </div>
             <div class="row-like is-hideable-1-6">
@@ -648,10 +647,10 @@
             <div class="row-like is-hideable-7-1">
               <div class="col-6 thead-col">Жировая масса (кг) <a id="hideable-7-1" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="mass_fat" type="text" placeholder="..." class="form-control calculate-percentage">
               </div>
               <div class="col-2 is-hideable-col-7-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="percentage-mass_fat" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-7-3 input-cell">
                 <input type="text" placeholder="..." class="form-control">
@@ -660,10 +659,10 @@
             <div class="row-like is-hideable-7-2">
               <div class="col-6 thead-col">Тощая масса (кг) <a id="hideable-7-2" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="mass_lean" type="text" placeholder="..." class="form-control calculate-percentage">
               </div>
               <div class="col-2 is-hideable-col-7-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="percentage-mass_lean" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-7-3 input-cell">
                 <input type="text" placeholder="..." class="form-control">
@@ -672,10 +671,10 @@
             <div class="row-like is-hideable-7-3">
               <div class="col-6 thead-col">Скелетно-мышечная масса <a id="hideable-7-3" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="mass_skeletal_muscle" type="text" placeholder="..." class="form-control calculate-percentage">
               </div>
               <div class="col-2 is-hideable-col-7-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="percentage-mass_skeletal_muscle" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-7-3 input-cell">
                 <input type="text" placeholder="..." class="form-control">
@@ -684,10 +683,10 @@
             <div class="row-like is-hideable-7-4">
               <div class="col-6 thead-col">Активная клеточная масса (кг) <a id="hideable-7-4" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="mass_active_cellular" type="text" placeholder="..." class="form-control calculate-percentage">
               </div>
               <div class="col-2 is-hideable-col-7-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+                <input id="percentage-mass_active_cellular" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-7-3 input-cell">
                 <input type="text" placeholder="..." class="form-control">
@@ -699,7 +698,7 @@
                 <input type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-7-2 input-cell">
-                <input type="text" placeholder="..." class="form-control">
+
               </div>
               <div class="col-2 is-hideable-col-7-3 input-cell">
                 <input type="text" placeholder="..." class="form-control">

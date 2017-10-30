@@ -13,8 +13,8 @@ var heightStandingMeters = null;
 var heightSitting = null;
 var patientWeight = null;
 var patientBMI = null;
-var waistLength = null;
-var hipsLength = null;
+var waistLength = null; // не печатается
+var hipsLength = null; // не печатается
 var patientWHR = null;
 var chestExcursion = null;
 var legLengthDifferenceRelative = null;
@@ -46,7 +46,7 @@ function setAgeConverted (a,b) {
 
 function calculateBMI () {
   patientBMI = patientWeight / (heightStandingMeters * heightStandingMeters);
-  $('#body-mass-index').val(patientBMI.toFixed(1));
+  $('#body-mass-index').val(patientBMI.toFixed(2));
 };
 
 function calculateWHR () {
@@ -60,6 +60,8 @@ function calculateWHR () {
 function fillReferenceValues() {
   fillReferenceInterval('height', ageRangeTableHeight);
   fillReferenceInterval('weight', ageRangeTableHeight);
+  fillReferenceInterval('bmi', ageRangeTableBMI);
+  fillReferenceWHR();
 }
 
 //=========================================
@@ -132,6 +134,13 @@ $(document).ready(function(){
   $('#hips-length').on('change', function() {
     hipsLength = parseInt(this.value);
     waistLength && hipsLength && calculateWHR();
+  });
+
+  // Считаем % от массы тела для жира, костей и активной клеточной массы
+  $('.calculate-percentage').on('change', function() {
+    let targetCell = $(this).attr('id');
+    let calculatedPercentage = (parseInt(this.value) / patientWeight * 100).toFixed(1) + '%';
+    $('#percentage-' + targetCell).val(calculatedPercentage);
   });
 
 });
