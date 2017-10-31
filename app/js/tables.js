@@ -4,7 +4,7 @@
 //==================================================================================
 // Референсные интервалы
 function fillReferenceInterval (parameterName, ageRangeTable) {
-  let referenceTable = 'table_' + parameterName + '_' + genderSelected;
+  let referenceTable = 'table_' + parameterName + '_' + patient.gender;
   let referenceTableIndex = getAgeGroup(ageRangeTable);
   let referenceInterval = window[referenceTable][referenceTableIndex];
   $('#reference-' + parameterName).val(referenceInterval);
@@ -13,7 +13,7 @@ function fillReferenceInterval (parameterName, ageRangeTable) {
 function getAgeGroup (ageRangeTable) {
   let index;
   for (index = 0; index < ageRangeTable.length - 1; index++) {
-    if (rangeShort(ageConverted, ageRangeTable[index], ageRangeTable[index + 1])) {
+    if (rangeShort(patient.ageConverted, ageRangeTable[index], ageRangeTable[index + 1])) {
       return index;
     } else {
     };
@@ -34,7 +34,7 @@ function getPercentile (patientParameterValue, parameterValuesArray, categoryNam
 // Процентили
 function fillPercentile (parameterName, categoryName) {
   let patientParameterValue = $('#patient-' + parameterName).val();
-  let parametersTable = 'table_' + parameterName + '_' + genderSelected;
+  let parametersTable = 'table_' + parameterName + '_' + patient.gender;
   let ageRangeForCategory = 'ageRangeTable' + categoryName;
   let parametersTableIndex = getAgeGroup(window[ageRangeForCategory]);
   let parameterValuesArray = window[parametersTable][parametersTableIndex];
@@ -44,7 +44,7 @@ function fillPercentile (parameterName, categoryName) {
 
 // WHR
 function fillReferenceWHR () {
-  if (genderSelected == 'male') {
+  if (patient.gender == 'male') {
     $('#reference-whr').val('< 0.85');
   } else {
     $('#reference-whr').val('< 0.75');

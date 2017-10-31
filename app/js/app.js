@@ -1,11 +1,19 @@
 // Made by Dmitry Glinskiy, contact me at glinskiy.net
 
 // Global variables
-// Patient general
-var ageYears = 0;
-var ageMonths = 0;
-var ageConverted = null;
-var genderSelected = null;
+// NEW! Patient object
+var patient = {
+  // Личные данные пациента
+  "fullName" : "",
+  "idNumber" : "",
+  "gender" : "",
+  "ageYears" : "",
+  "ageMonths" : "",
+  "ageConverted" : "", // возраст пациента, выраженный месяцах
+  "diagnosisMKB" : ""
+
+  // Таблица 1. Антропометрические показатели
+}
 
 // Patient Table 1
 var heightStanding = null;
@@ -20,14 +28,10 @@ var chestExcursion = null;
 var legLengthDifferenceRelative = null;
 var legLengthDifferenceAbsolute = null;
 
-// Patient Table 2
 
-
+//=========================================
 // Helper functions
-function range(x, min, max) {
-  return x >= min && x <= max;
-};
-
+//=========================================
 function rangeShort(x, min, max) {
   return x >= min && x < max;
 };
@@ -38,10 +42,10 @@ function getSumm(a,b) {
 
 //=========================================
 // Калькуляторы параметров пациента
+// для которых есть простые формулы
 //=========================================
-function setAgeConverted (a,b) {
-  ageConverted = ageYears * 12 + ageMonths;
-  $('.age-converted').html(ageConverted);
+function setAgeConverted (ageYears, ageMonths) {
+  patient.ageConverted = ageYears * 12 + ageMonths;
 };
 
 function calculateBMI () {
@@ -74,6 +78,15 @@ $(document).ready(function(){
     $('.is-' + removeTarget).hide();
   });
 
+  // Обновление объекта пациента
+  $('.update-object').on('change', function() {
+    let updatedParameter = $(this).attr('id');
+    let updatedParameterValue = $(this).val();
+    console.log('Updated "' + updatedParameter + '" with: ' + updatedParameterValue);
+    patient[updatedParameter] = updatedParameterValue;
+  });
+
+
   // Копирование полей пациента на другие страницы
   $('.copied-field').on('change', function() {
     var copyTarget = $(this).attr('id');
@@ -81,36 +94,36 @@ $(document).ready(function(){
   });
 
   // Реагируем на смену возраста
-  $('#patient-age-years').on('change', function() {
-    ageYears = parseInt(this.value);
-    ageMonths = parseInt($('#patient-age-months').val());
-    setAgeConverted (ageYears, ageMonths);
+  $('#ageYears').on('change', function() {
+    patient.ageYears = parseInt(this.value);
+    patient.ageMonths = parseInt($('#ageMonths').val());
+    setAgeConverted (patient.ageYears, patient.ageMonths);
 
-    genderSelected && ageConverted && fillReferenceValues();
+    patient.gender && patient.ageConverted && fillReferenceValues();
   });
 
   // Реагируем на смену возраста
-  $('#patient-age-months').on('change', function() {
-    ageMonths = parseInt(this.value);
-    ageYears = parseInt($('#patient-age-years').val());
-    setAgeConverted (ageYears, ageMonths);
+  $('#ageMonths').on('change', function() {
+    patient.ageMonths = parseInt(this.value);
+    patient.ageYears = parseInt($('#ageYears').val());
+    setAgeConverted (patient.ageYears, patient.ageMonths);
 
-    genderSelected && ageConverted && fillReferenceValues();
+    patient.gender && patient.ageConverted && fillReferenceValues();
   });
 
   // Реагируем на смену пола
-  $('#patient-gender').on('change', function() {
-    genderSelected = $('#patient-gender').val();
-    if (genderSelected == 'male') {
+  $('#gender').on('change', function() {
+    patient.gender = $('#gender').val();
+    if (patient.gender == 'male') {
       genderSelectedRus = 'Мужской';
-    } else if (genderSelected == 'female') {
+    } else if (patient.gender == 'female') {
       genderSelectedRus = 'Женский';
     } else {
       genderSelectedRus = 'Ошибочка, не выбран пол!';
     }
-    $('.patient-gender-copy').html(genderSelectedRus);
+    $('.gender-copy').html(genderSelectedRus);
 
-    genderSelected && ageConverted && fillReferenceValues();
+    patient.gender && patient.ageConverted && fillReferenceValues();
   });
 
   // Считаем Body Mass Index (BMI)
@@ -143,4 +156,16 @@ $(document).ready(function(){
     $('#percentage-' + targetCell).val(calculatedPercentage);
   });
 
+});
+
+
+// Debug area stuff
+$(document).ready(function(){
+  // Кнопка для вывода объекта по строчкам в текстовый бокс
+  $('#show-patient-object').click(function(){
+    for (const prop in patient) {
+      console.log(`patient.${prop} = ${patient[prop]}`);
+      $('#debug-textarea').val($('#debug-textarea').val() + `patient.${prop} = ${patient[prop]}` + '\n');
+    }
+  });
 });
