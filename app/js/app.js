@@ -11,7 +11,7 @@ var patient = {
   "gender" : "",
   "ageYears" : "",
   "ageMonths" : "",
-  "ageConverted" : "", // возраст пациента, выраженный месяцах
+  "ageConverted" : "",
   "diagnosisMKB" : "",
   // Таблица 1. Антропометрические показатели
   "height" : "",
@@ -71,7 +71,11 @@ var patient = {
   "pressurePointSpeedEyesOpen" : "",
   "pressurePointSpeedEyesClosed" : "",
   // Таблица 7. Биоимпеданс
-  "" : "",
+  "massFat" : "",
+  "massLean" : "",
+  "massSkeletalMuscle" : "",
+  "massActiveCellular" : "",
+  "phasicAngle" : "",
   // Заключения, блок 1
   "conclusionAPhysicalDevelopment" : "",
   "conclusionAVisceralObesitySigns" : "",
@@ -226,17 +230,32 @@ $(document).ready(function(){
 });
 
 
+
+
+
 // Debug area stuff
 $(document).ready(function(){
+
   // Кнопка для вывода объекта по строчкам в текстовый бокс
   $('#show-patient-object').click(function(){
     for (const prop in patient) {
       console.log(`patient.${prop} = ${patient[prop]}`);
       $('#debug-textarea').val($('#debug-textarea').val() + `patient.${prop} = ${patient[prop]}` + '\n');
-    }
+    };
   });
+
   // Кнопка для вывода объекта в виде stringify
   $('#show-patient-stringify').click(function(){
     $('#debug-textarea').val(JSON.stringify(patient));
   });
+
+  // Кнопка для конверсии JSON string в объект пациента и заполнение всех полей из памяти
+  $('#remember-patient').click(function(){
+    var restoredPatient = $('#debug-textarea').val();
+    patient = JSON.parse(restoredPatient);
+    for (const prop in patient) {
+      $('#' + prop).val(patient[prop]);
+    };
+  });
+
 });

@@ -642,10 +642,10 @@
             <div class="row-like is-hideable-7-1">
               <div class="col-6 thead-col">Жировая масса (кг) <a id="hideable-7-1" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input id="mass_fat" type="text" placeholder="..." class="form-control calculate-percentage" tabindex="91">
+                <input id="massFat" type="text" placeholder="..." class="form-control calculate-percentage update-object" tabindex="91">
               </div>
               <div class="col-2 is-hideable-col-7-2 input-cell">
-                <input id="percentage-mass_fat" type="text" placeholder="..." class="form-control">
+                <input id="percentage-massFat" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-7-3 input-cell">
                 <input type="text" placeholder="..." class="form-control">
@@ -654,10 +654,10 @@
             <div class="row-like is-hideable-7-2">
               <div class="col-6 thead-col">Тощая масса (кг) <a id="hideable-7-2" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input id="mass_lean" type="text" placeholder="..." class="form-control calculate-percentage" tabindex="92">
+                <input id="massLean" type="text" placeholder="..." class="form-control calculate-percentage update-object" tabindex="92">
               </div>
               <div class="col-2 is-hideable-col-7-2 input-cell">
-                <input id="percentage-mass_lean" type="text" placeholder="..." class="form-control">
+                <input id="percentage-massLean" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-7-3 input-cell">
                 <input type="text" placeholder="..." class="form-control">
@@ -666,10 +666,10 @@
             <div class="row-like is-hideable-7-3">
               <div class="col-6 thead-col">Скелетно-мышечная масса <a id="hideable-7-3" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input id="mass_skeletal_muscle" type="text" placeholder="..." class="form-control calculate-percentage" tabindex="93">
+                <input id="massSkeletalMuscle" type="text" placeholder="..." class="form-control calculate-percentage update-object" tabindex="93">
               </div>
               <div class="col-2 is-hideable-col-7-2 input-cell">
-                <input id="percentage-mass_skeletal_muscle" type="text" placeholder="..." class="form-control">
+                <input id="percentage-massSkeletalMuscle" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-7-3 input-cell">
                 <input type="text" placeholder="..." class="form-control">
@@ -678,10 +678,10 @@
             <div class="row-like is-hideable-7-4">
               <div class="col-6 thead-col">Активная клеточная масса (кг) <a id="hideable-7-4" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input id="mass_active_cellular" type="text" placeholder="..." class="form-control calculate-percentage" tabindex="94">
+                <input id="massActiveCellular" type="text" placeholder="..." class="form-control calculate-percentage update-object" tabindex="94">
               </div>
               <div class="col-2 is-hideable-col-7-2 input-cell">
-                <input id="percentage-mass_active_cellular" type="text" placeholder="..." class="form-control">
+                <input id="percentage-massActiveCellular" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-7-3 input-cell">
                 <input type="text" placeholder="..." class="form-control">
@@ -690,11 +690,9 @@
             <div class="row-like is-hideable-7-5">
               <div class="col-6 thead-col">Фазовый угол (градусы) <a id="hideable-7-5" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input type="text" placeholder="..." class="form-control" tabindex="95">
+                <input id="phasicAngle" type="text" placeholder="..." class="form-control update-object" maxlength="5" tabindex="95">
               </div>
-              <div class="col-2 is-hideable-col-7-2 input-cell">
-
-              </div>
+              <div class="col-2 is-hideable-col-7-2 input-cell">&nbsp;</div>
               <div class="col-2 is-hideable-col-7-3 input-cell">
                 <input type="text" placeholder="..." class="form-control">
               </div>
@@ -737,7 +735,8 @@
       <div class="row debug-area">
         <div class="col-12">
           <span id="show-patient-object" class="debug-button">Показать</span>
-          <span id="show-patient-stringify" class="debug-button">Stringify</span><br/>
+          <span id="show-patient-stringify" class="debug-button">Экспорт JSON</span>
+          <span id="remember-patient" class="debug-button">Импорт JSON</span><br/>
           <textarea id="debug-textarea" rows="12"></textarea>
         </div>
       </div>
