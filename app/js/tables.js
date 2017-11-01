@@ -3,6 +3,7 @@
 // и имени таблицы возрастных диапазонов
 //==================================================================================
 // Референсные интервалы
+//=========================================
 function fillReferenceInterval (parameterName, ageRangeTable) {
   let referenceTable = 'table_' + parameterName + '_' + patient.gender;
   let referenceTableIndex = getAgeGroup(ageRangeTable);
@@ -20,6 +21,21 @@ function getAgeGroup (ageRangeTable) {
   };
 };
 
+
+//=========================================
+// Процентили
+//=========================================
+function fillPercentile (parameterName, categoryName) {
+  let patientParameterValue = $('#' + parameterName).val();
+  let parametersTable = 'table_' + parameterName + '_' + patient.gender;
+  let ageRangeForCategory = 'ageRangeTable' + categoryName;
+  let parametersTableIndex = getAgeGroup(window[ageRangeForCategory]);
+  let parameterValuesArray = window[parametersTable][parametersTableIndex];
+  let percentileInterval = getPercentile(patientParameterValue, parameterValuesArray, categoryName);
+  $('#percentile-' + parameterName).val(percentileInterval);
+};
+
+// Сканер массива параметров
 function getPercentile (patientParameterValue, parameterValuesArray, categoryName) {
   let index;
   let percentilesTableName = ('percentiles' + categoryName);
@@ -31,18 +47,9 @@ function getPercentile (patientParameterValue, parameterValuesArray, categoryNam
   };
 };
 
-// Процентили
-function fillPercentile (parameterName, categoryName) {
-  let patientParameterValue = $('#patient-' + parameterName).val();
-  let parametersTable = 'table_' + parameterName + '_' + patient.gender;
-  let ageRangeForCategory = 'ageRangeTable' + categoryName;
-  let parametersTableIndex = getAgeGroup(window[ageRangeForCategory]);
-  let parameterValuesArray = window[parametersTable][parametersTableIndex];
-  let percentileInterval = getPercentile(patientParameterValue, parameterValuesArray, categoryName);
-  $('#percentile-' + parameterName).val(percentileInterval);
-};
-
+//=========================================
 // WHR
+//=========================================
 function fillReferenceWHR () {
   if (patient.gender == 'male') {
     $('#reference-whr').val('< 0.85');
@@ -259,7 +266,7 @@ var percentilesPhysicalAttributes = [
 ];
 
 // Мышцы спины (сек), Мальчики
-var table_back_strength_male = [
+var table_backStrength_male = [
   [0, 7, 11, 21, 31, 50, 71, 85, 500],
   [0, 10, 16, 26, 38, 51, 79, 122, 500],
   [0, 15, 20, 30, 47.5, 63, 86, 118, 500],
@@ -274,7 +281,7 @@ var table_back_strength_male = [
 ];
 
 // Мышцы спины (сек), Девочки
-var table_back_strength_female = [
+var table_backStrength_female = [
   [0, 5, 10, 18, 27.5, 40, 61, 100, 500],
   [0, 5, 13, 22, 35, 50, 76, 105, 500],
   [0, 10, 16, 25, 47, 70, 90, 134, 500],
@@ -289,7 +296,7 @@ var table_back_strength_female = [
 ];
 
 // Мышцы брюшного пресса (сек), Мальчики
-var table_abdominal_press_male = [
+var table_abdominalPress_male = [
   [0, 1, 1, 3, 5, 10, 17, 37, 500],
   [0, 1, 1, 4, 6, 10, 16, 30, 500],
   [0, 1, 2, 4, 7, 13, 22, 25, 500],
@@ -304,7 +311,7 @@ var table_abdominal_press_male = [
 ];
 
 // Мышцы брюшного пресса (сек), Девочки
-var table_abdominal_press_female = [
+var table_abdominalPress_female = [
   [0, 1, 1, 3, 5, 8, 17, 30, 500],
   [0, 1, 1, 3, 5, 7, 14, 27, 500],
   [0, 1, 3, 4, 5.3, 8, 15, 20, 500],
@@ -319,7 +326,7 @@ var table_abdominal_press_female = [
 ];
 
 // Мышцы рук (сек), Мальчики
-var table_hand_strength_left_male = [
+var table_handStrengthLeft_male = [
   [0, 2, 4, 8, 15, 30, 42, 56, 500],
   [0, 5, 7, 10, 18, 28, 36, 56, 500],
   [0, 6, 9, 13, 19.5, 29, 46, 82, 500],
@@ -334,7 +341,7 @@ var table_hand_strength_left_male = [
 ];
 
 // Мышцы рук (сек), Девочки
-var table_hand_strength_left_female = [
+var table_handStrengthLeft_female = [
   [0, 7, 9.4, 15, 24, 31, 39.5, 48, 500],
   [0, 4, 9, 15, 25, 36, 53, 70.1, 500],
   [0, 6, 13, 21, 35, 48, 60, 78, 500],
@@ -349,7 +356,7 @@ var table_hand_strength_left_female = [
 ];
 
 // Мышцы рук RIGHT (сек), Мальчики
-var table_hand_strength_right_male = [
+var table_handStrengthRight_male = [
   [0, 2, 4, 8, 15, 30, 42, 56, 500],
   [0, 5, 7, 10, 18, 28, 36, 56, 500],
   [0, 6, 9, 13, 19.5, 29, 46, 82, 500],
@@ -364,7 +371,7 @@ var table_hand_strength_right_male = [
 ];
 
 // Мышцы рук RIGHT (сек), Девочки
-var table_hand_strength_right_female = [
+var table_handStrengthRight_female = [
   [0, 7, 9.4, 15, 24, 31, 39.5, 48, 500],
   [0, 4, 9, 15, 25, 36, 53, 70.1, 500],
   [0, 6, 13, 21, 35, 48, 60, 78, 500],
@@ -379,7 +386,7 @@ var table_hand_strength_right_female = [
 ];
 
 // Мышцы ног (сек), Мальчики
-var table_leg_strength_left_male = [
+var table_legStrengthLeft_male = [
   [0, 2.1, 5.3, 13, 23, 41, 66, 117, 500],
   [0, 3, 8, 13.8, 24, 52, 110, 150, 500],
   [0, 3, 6, 12, 20.5, 39.5, 88, 147, 500],
@@ -394,7 +401,7 @@ var table_leg_strength_left_male = [
 ];
 
 // Мышцы ног (сек), Девочки
-var table_leg_strength_left_female = [
+var table_legStrengthLeft_female = [
   [0, 4.2, 8, 13, 25, 44, 88, 134, 500],
   [0, 4, 7, 12, 17, 41, 79, 180, 500],
   [0, 3, 6, 12, 22, 35, 60, 82, 500],
@@ -409,7 +416,7 @@ var table_leg_strength_left_female = [
 ];
 
 // Мышцы ног RIGHT (сек), Мальчики
-var table_leg_strength_right_male = [
+var table_legStrengthRight_male = [
   [0, 2.1, 5.3, 13, 23, 41, 66, 117, 500],
   [0, 3, 8, 13.8, 24, 52, 110, 150, 500],
   [0, 3, 6, 12, 20.5, 39.5, 88, 147, 500],
@@ -424,7 +431,7 @@ var table_leg_strength_right_male = [
 ];
 
 // Мышцы ног RIGHT (сек), Девочки
-var table_leg_strength_right_female = [
+var table_legStrengthRight_female = [
   [0, 4.2, 8, 13, 25, 44, 88, 134, 500],
   [0, 4, 7, 12, 17, 41, 79, 180, 500],
   [0, 3, 6, 12, 22, 35, 60, 82, 500],
@@ -439,7 +446,7 @@ var table_leg_strength_right_female = [
 ];
 
 // Гибкость позвоночника (cm), Мальчики
-var table_spine_flexibility_male = [
+var table_spineFlexibility_male = [
   [0, -5, -3, 0, 2, 5, 8, 10, 500],
   [0, -10, -2, 2, 5, 8, 11, 12, 500],
   [0, -15, -8, -1.5, 3, 6, 9, 12, 500],
@@ -454,7 +461,7 @@ var table_spine_flexibility_male = [
 ];
 
 // Гибкость позвоночника (cm), Девочки
-var table_spine_flexibility_female = [
+var table_spineFlexibility_female = [
   [0, -6, -1, 1, 5, 9, 12, 16, 500],
   [0, -8, 0, 3, 7, 11, 14, 18, 500],
   [0, -12, -4, 4, 7.8, 12, 15, 19, 500],

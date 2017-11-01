@@ -1,7 +1,9 @@
-// Made by Dmitry Glinskiy, contact me at glinskiy.net
-
-// Global variables
-// NEW! Patient object
+//=========================================
+// Made by Dmitry Glinskiy,
+// contact me at glinskiy.net
+//=========================================
+// Patient object
+//=========================================
 var patient = {
   // Личные данные пациента
   "fullName" : "",
@@ -10,24 +12,94 @@ var patient = {
   "ageYears" : "",
   "ageMonths" : "",
   "ageConverted" : "", // возраст пациента, выраженный месяцах
-  "diagnosisMKB" : ""
-
+  "diagnosisMKB" : "",
   // Таблица 1. Антропометрические показатели
+  "height" : "",
+  "heightSitting" : "",
+  "weight" : "",
+  "bmi" : "",
+  "waistLength" : "",
+  "hipLength" : "",
+  "whr" : "",
+  "chestExcursion" : "",
+  "legLengthDifferenceRelative" : "",
+  "legLengthDifferenceAbsolute" : "",
+  // Таблица 2. Соматоскопические показатели
+  "chestDeformation" : "",
+  "spineAxisSaggitalDeviation" : "",
+  "pelvicTilt" : "",
+  "breathingType" : "",
+  "footDeformation" : "",
+  "neckLordosis" : "",
+  "chestKyphosis" : "",
+  "waistLordosis" : "",
+  "straightBack" : "",
+  // Таблица 3. Гониометрические показатели
+  "angleShoulderMovementLeft" : "",
+  "angleShoulderMovementRight" : "",
+  "angleElbowBendLeft" : "",
+  "angleElbowBendRight" : "",
+  "angleForearmBendLeft" : "",
+  "angleForearmBendRight" : "",
+  "anglePelvisJointBendLeft" : "",
+  "anglePelvisJointBendRight" : "",
+  "angleKneeJointBendLeft" : "",
+  "angleKneeJointBendRight" : "",
+  "angleAnkleJointBendLeft" : "",
+  "angleAnkleJointBendRight" : "",
+  // Таблица 4. Физические качества
+  "handStrengthLeft" : "",
+  "handStrengthRight" : "",
+  "legStrengthLeft" : "",
+  "legStrengthRight" : "",
+  "palmStrengthLeft" : "",
+  "palmStrengthRight" : "",
+  "backStrength" : "",
+  "abdominalPress" : "",
+  "deadlift" : "",
+  "spineFlexibility" : "",
+  // Таблица 5. Толерантность к физическим нагрузкам
+  "walkDistance" : "",
+  "cardiorespiratoryRestorationTime" : "",
+  // Таблица 6. Стабилометрические показатели
+  "shiftFrontalEyesOpen" : "",
+  "shiftFrontalEyesClosed" : "",
+  "shiftSaggitalEyesOpen" : "",
+  "shiftSaggitalEyesClosed" : "",
+  "ellipseSquareEyesOpen" : "",
+  "ellipseSquareEyesClosed" : "",
+  "pressurePointSpeedEyesOpen" : "",
+  "pressurePointSpeedEyesClosed" : "",
+  // Таблица 7. Биоимпеданс
+  "" : "",
+  // Заключения, блок 1
+  "conclusionAPhysicalDevelopment" : "",
+  "conclusionAVisceralObesitySigns" : "",
+  "conclusionABodyProportions" : "",
+  "conclusionABreathType" : "",
+  "conclusionASkeletalDeformations" : "",
+  // Заключения, блок 2
+  "conclsionBMovementLimitedInJoints" : "",
+  "conclsionBStrengthEndurance" : "",
+  "conclsionBPhysicalLoadEndurance" : "",
+  // Заключения, блок 3
+  "conclusionCPressureCenterPosition" : "",
+  "conclusionCBalanceStability" : "",
+  "conclusionCPrimarySensoricSystem" : "",
+  // Заключения, блок 4
+  "conclusionDPhysicalLoadReadinessLevel" : "",
+  "conclusionDPhysicalActivityLevel" : "",
+  "conclusionDMetabolicSyndromDevelopmentRisk" : "",
+  // Отметки исследователя и даты по страницам
+  "doctorA" : "",
+  "dateA" : "",
+  "doctorB" : "",
+  "dateB" : "",
+  "doctorC" : "",
+  "dateC" : "",
+  // Отметки "точек" контроля - для будущего функционала точек контроля и визуализации динамики параметров пациента
+  "controlPoint" : ""
 }
-
-// Patient Table 1
-var heightStanding = null;
-var heightStandingMeters = null;
-var heightSitting = null;
-var patientWeight = null;
-var patientBMI = null;
-var waistLength = null; // не печатается
-var hipsLength = null; // не печатается
-var patientWHR = null;
-var chestExcursion = null;
-var legLengthDifferenceRelative = null;
-var legLengthDifferenceAbsolute = null;
-
 
 //=========================================
 // Helper functions
@@ -36,26 +108,20 @@ function rangeShort(x, min, max) {
   return x >= min && x < max;
 };
 
-function getSumm(a,b) {
-  return a + b;
-};
-
 //=========================================
 // Калькуляторы параметров пациента
 // для которых есть простые формулы
 //=========================================
-function setAgeConverted (ageYears, ageMonths) {
-  patient.ageConverted = ageYears * 12 + ageMonths;
-};
-
+// Body Mass Index / индекс массы тела
 function calculateBMI () {
-  patientBMI = patientWeight / (heightStandingMeters * heightStandingMeters);
-  $('#body-mass-index').val(patientBMI.toFixed(2));
+  patient.bmi = (patient.weight / (patient.height * patient.height / 10000)).toFixed(2);
+  $('#bmi').val(patient.bmi);
 };
 
+// Waist-Hip-Ratio / соотношение талия-бедра
 function calculateWHR () {
-  patientWHR = waistLength / hipsLength;
-  $('#waist-hip-ratio').val(patientWHR.toFixed(2));
+  patient.whr = (patient.waistLength / patient.hipsLength).toFixed(2);
+  $('#whr').val(patient.whr);
 };
 
 //=========================================
@@ -72,6 +138,7 @@ function fillReferenceValues() {
 // Основные реакции на изменения полей
 //=========================================
 $(document).ready(function(){
+
   // Кнопки для скрытия элементов
   $('.element-remover').click(function(){
     var removeTarget = $(this).attr('id');
@@ -86,18 +153,18 @@ $(document).ready(function(){
     patient[updatedParameter] = updatedParameterValue;
   });
 
-
   // Копирование полей пациента на другие страницы
   $('.copied-field').on('change', function() {
     var copyTarget = $(this).attr('id');
     $('.' + copyTarget + '-copy').html(this.value);
   });
 
+
   // Реагируем на смену возраста
   $('#ageYears').on('change', function() {
     patient.ageYears = parseInt(this.value);
     patient.ageMonths = parseInt($('#ageMonths').val());
-    setAgeConverted (patient.ageYears, patient.ageMonths);
+    patient.ageConverted = patient.ageYears * 12 + patient.ageMonths;
 
     patient.gender && patient.ageConverted && fillReferenceValues();
   });
@@ -106,7 +173,7 @@ $(document).ready(function(){
   $('#ageMonths').on('change', function() {
     patient.ageMonths = parseInt(this.value);
     patient.ageYears = parseInt($('#ageYears').val());
-    setAgeConverted (patient.ageYears, patient.ageMonths);
+    patient.ageConverted = patient.ageYears * 12 + patient.ageMonths;
 
     patient.gender && patient.ageConverted && fillReferenceValues();
   });
@@ -126,33 +193,33 @@ $(document).ready(function(){
     patient.gender && patient.ageConverted && fillReferenceValues();
   });
 
+
   // Считаем Body Mass Index (BMI)
-  $('#patient-weight').on('change', function() {
-    patientWeight = parseInt(this.value);
-    patientWeight && heightStanding && calculateBMI();
+  $('#weight').on('change', function() {
+    patient.weight = parseFloat(this.value);
+    patient.weight && patient.height && calculateBMI();
   });
 
-  $('#height-standing').on('change', function() {
-    heightStanding = parseInt(this.value);
-    heightStandingMeters = heightStanding / 100;
-    patientWeight && heightStanding && calculateBMI();
+  $('#height').on('change', function() {
+    patient.height = parseFloat(this.value);
+    patient.weight && patient.height && calculateBMI();
   });
 
   // Считаем Waist-Hip-Ratio (WHR)
-  $('#waist-length').on('change', function() {
-    waistLength = parseInt(this.value);
-    waistLength && hipsLength && calculateWHR();
+  $('#waistLength').on('change', function() {
+    patient.waistLength = parseFloat(this.value);
+    patient.waistLength && patient.hipsLength && calculateWHR();
   });
 
-  $('#hips-length').on('change', function() {
-    hipsLength = parseInt(this.value);
-    waistLength && hipsLength && calculateWHR();
+  $('#hipsLength').on('change', function() {
+    patient.hipsLength = parseFloat(this.value);
+    patient.waistLength && patient.hipsLength && calculateWHR();
   });
 
   // Считаем % от массы тела для жира, костей и активной клеточной массы
   $('.calculate-percentage').on('change', function() {
     let targetCell = $(this).attr('id');
-    let calculatedPercentage = (parseInt(this.value) / patientWeight * 100).toFixed(1) + '%';
+    let calculatedPercentage = (parseFloat(this.value) / patient.weight * 100).toFixed(1) + '%';
     $('#percentage-' + targetCell).val(calculatedPercentage);
   });
 
@@ -167,5 +234,9 @@ $(document).ready(function(){
       console.log(`patient.${prop} = ${patient[prop]}`);
       $('#debug-textarea').val($('#debug-textarea').val() + `patient.${prop} = ${patient[prop]}` + '\n');
     }
+  });
+  // Кнопка для вывода объекта в виде stringify
+  $('#show-patient-stringify').click(function(){
+    $('#debug-textarea').val(JSON.stringify(patient));
   });
 });
