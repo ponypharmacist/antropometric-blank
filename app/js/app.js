@@ -227,15 +227,20 @@ $(document).ready(function(){
     $('#percentage-' + targetCell).val(calculatedPercentage);
   });
 
+  // Ставим подписи специалистов
+  $('.doctor-select').on('change', function() {
+    let selectedDoctor = $(this).val();
+    let targetSignature = $(this).attr('id');
+    $("#signature-" + targetSignature).attr('class',selectedDoctor);
+  });
+
 });
 
 
-
-
-
+//=========================================
 // Debug area stuff
+//=========================================
 $(document).ready(function(){
-
   // Кнопка для вывода объекта по строчкам в текстовый бокс
   $('#show-patient-object').click(function(){
     for (const prop in patient) {
@@ -257,5 +262,4 @@ $(document).ready(function(){
       $('#' + prop).val(patient[prop]);
     };
   });
-
 });

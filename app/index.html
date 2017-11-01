@@ -70,13 +70,13 @@
                 <input id="height" type="text" placeholder="..." class="form-control" maxlength="3" tabindex="7">
               </div>
               <div class="col-2 is-hideable-col-1-2 input-cell">
-                <input id="reference-height" type="text" class="form-control" readonly>
+                <input id="reference-height" type="text" placeholder="..." class="form-control" readonly>
               </div>
             </div>
             <div class="row-like is-hideable-1-2">
               <div class="col-8 thead-col">Рост сидя (см) <a id="hideable-1-2" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input id="heightSitting" type="text" placeholder="..." class="form-control update-object" tabindex="8">
+                <input id="heightSitting" type="text" placeholder="..." class="form-control update-object" maxlength="3" tabindex="8">
               </div>
               <div class="col-2 is-hideable-col-1-2 input-cell">
                 <input type="text" placeholder="..." class="form-control">
@@ -88,16 +88,16 @@
                 <input id="weight" type="text" placeholder="..." class="form-control" maxlength="5" tabindex="9">
               </div>
               <div class="col-2 is-hideable-col-1-2 input-cell">
-                <input id="reference-weight" type="text" class="form-control" readonly>
+                <input id="reference-weight" type="text" placeholder="..." class="form-control" readonly>
               </div>
             </div>
             <div class="row-like is-hideable-1-4">
               <div class="col-8 thead-col">Индекс массы тела (BMI) <a id="hideable-1-4" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input id="bmi" type="text" placeholder="..." class="form-control">
+                <input id="bmi" type="text" placeholder="..." class="form-control" readonly>
               </div>
               <div class="col-2 is-hideable-col-1-2 input-cell">
-                <input id="reference-bmi" type="text" class="form-control" readonly>
+                <input id="reference-bmi" type="text" placeholder="..." class="form-control" readonly>
               </div>
             </div>
             <div class="row-like is-hideable-1-5">
@@ -109,13 +109,13 @@
                 <input id="whr" type="text" placeholder="..." class="form-control">
               </div>
               <div class="col-2 is-hideable-col-1-2 input-cell">
-                <input id="reference-whr" type="text" class="form-control" readonly>
+                <input id="reference-whr" type="text" placeholder="..." class="form-control" readonly>
               </div>
             </div>
             <div class="row-like is-hideable-1-6">
               <div class="col-8 thead-col">Экскурсия грудной клетки (см) <a id="hideable-1-6" class="element-remover">✕</a></div>
               <div class="col-2 input-cell">
-                <input id="chestExcursion" type="text" placeholder="..." class="form-control update-object" tabindex="14">
+                <input id="chestExcursion" type="text" placeholder="..." class="form-control update-object" maxlength="4" tabindex="14">
               </div>
               <div class="col-2 is-hideable-col-1-2 input-cell">
                 <input type="text" value="3 - 4 см" class="form-control" readonly>
@@ -242,12 +242,19 @@
           <span class="diagnosis-hint">(не выявлены, выявлены (какие))</span></p>
         </div>
 
-        <div class="col-7">
-          <p>
+        <div class="col-7" style="position:relative;">
             <label>Исследователь:</label>
-            <input id="doctorA" type="text" class="form-control update-object" placeholder="..." tabindex="32">
+            <select id="doctorA" class="select-control doctor-select update-object" tabindex="32">
+              <option value="baerbach">Баербах А.В.</option>
+              <option value="juk">Жук Д.В.</option>
+              <option value="nikulin">Никулин В.А.</option>
+              <option value="mineev">Минеев И.О.</option>
+              <option value="krotko">Кротько К.Г.</option>
+              <option value="olejnikova">Олейникова М.И.</option>
+              <option value="taldykina">Талдыкина Н.В.</option>
+            </select>
             <span class="doctor-signature">(подпись)</span>
-          </p>
+            <div id="signature-doctorA"></div>
         </div>
         <div class="col-5">
           <p>
@@ -510,12 +517,19 @@
           <span class="diagnosis-hint">(снижена, в пределах нормы, повышена)</span></p>
         </div>
 
-        <div class="col-7">
-          <p>
+        <div class="col-7" style="position:relative;">
             <label>Исследователь:</label>
-            <input id="doctorB" type="text" class="form-control update-object" placeholder="..." tabindex="67">
+            <select id="doctorB" class="select-control doctor-select update-object" tabindex="67">
+              <option value="baerbach">Баербах А.В.</option>
+              <option value="juk">Жук Д.В.</option>
+              <option value="nikulin">Никулин В.А.</option>
+              <option value="mineev">Минеев И.О.</option>
+              <option value="krotko">Кротько К.Г.</option>
+              <option value="olejnikova">Олейникова М.И.</option>
+              <option value="taldykina">Талдыкина Н.В.</option>
+            </select>
             <span class="doctor-signature">(подпись)</span>
-          </p>
+            <div id="signature-doctorB"></div>
         </div>
         <div class="col-5">
           <p>
@@ -715,12 +729,19 @@
           <span class="diagnosis-hint">(есть, нет)</span></p>
         </div>
 
-        <div class="col-7">
-          <p>
+        <div class="col-7" style="position:relative;">
             <label>Исследователь:</label>
-            <input id="doctorC" type="text" class="form-control update-object" placeholder="..." tabindex="99">
+            <select id="doctorC" class="select-control doctor-select update-object" tabindex="99">
+              <option value="baerbach">Баербах А.В.</option>
+              <option value="juk">Жук Д.В.</option>
+              <option value="nikulin">Никулин В.А.</option>
+              <option value="mineev">Минеев И.О.</option>
+              <option value="krotko">Кротько К.Г.</option>
+              <option value="olejnikova">Олейникова М.И.</option>
+              <option value="taldykina">Талдыкина Н.В.</option>
+            </select>
             <span class="doctor-signature">(подпись)</span>
-          </p>
+            <div id="signature-doctorC"></div>
         </div>
         <div class="col-5">
           <p>
@@ -734,6 +755,8 @@
       <!-- Debug area -->
       <div class="row debug-area">
         <div class="col-12">
+          <br/><br/>
+          Временные штуки для проверки на ошибки. Не обращайте внимания. Они не печатаются.<br/>
           <span id="show-patient-object" class="debug-button">Показать</span>
           <span id="show-patient-stringify" class="debug-button">Экспорт JSON</span>
           <span id="remember-patient" class="debug-button">Импорт JSON</span><br/>

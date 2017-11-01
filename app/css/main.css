@@ -231,7 +231,13 @@ h5 {
   right: auto;
 }
 
+select.doctor-select {
+  width: 162px;
+  position: relative;
+  z-index: 10;
+}
 .doctor-signature {
+  display: inline-block;
   border-top: 1px solid #666;
   color: #666;
   padding: 0 40px;
@@ -239,7 +245,29 @@ h5 {
   line-height: 14px;
   position: relative;
   top: 18px;
+  z-index: 10;
 }
+#signature-doctorA,
+#signature-doctorB,
+#signature-doctorC {
+  width: 330px;
+  height: 166px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -70px;
+  margin-top: -98px;
+  transform: scale(0.5);
+  z-index: 0;
+}
+.baerbach { background: transparent url('../images/sig-baerbach.png') no-repeat 50% 50% / cover; }
+.juk { background: transparent url('../images/sig-juk.png') no-repeat 50% 50% / cover; }
+.nikulin { background: transparent url('../images/sig-nikulin.png') no-repeat 50% 50% / cover; }
+.mineev { background: transparent url('../images/sig-mineev.png') no-repeat 50% 50% / cover; }
+.krotko { background: transparent url('../images/sig-krotko.png') no-repeat 50% 50% / cover; }
+.olejnikova { background: transparent url('../images/sig-olejnikova.png') no-repeat 50% 50% / cover; }
+.taldykina { background: transparent url('../images/sig-taldykina.png') no-repeat 50% 50% / cover; }
+
 
 .patient-data {
   line-height: 32px;
@@ -306,6 +334,8 @@ h5 {
     height: 34px;
     background-color: rgba(0,0,0,0.05);
     padding: 12px 6px!important;
+    position: relative;
+    z-index: 10;
   }
   select.select-control {
     background-color: transparent;
