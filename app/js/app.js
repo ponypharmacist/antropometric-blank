@@ -278,7 +278,7 @@ $(document).ready(function(){
 
   // Кнопка для вывода объекта в виде stringify
   $('#show-patient-stringify').click(function(){
-    $('#debug-textarea').val(JSON.stringify(patient));
+    $('#debug-textarea').val(JSON.stringify(patient, "", 2));
   });
 
   // Кнопка для конверсии JSON string в объект пациента и заполнение всех полей из памяти
