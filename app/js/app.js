@@ -150,6 +150,30 @@ function recalculatePercentage() {
 };
 
 //=========================================
+// Вспоминаем копируемые поля при импорте пациента
+//=========================================
+function refillCopiedFields() {
+  let copiedInputs = ['fullName','idNumber','gender','ageYears','ageMonths','diagnosisMKB'];
+  copiedInputs.forEach(function(field, i, copiedInputs) {
+    let copiedString = $('#' + field).val();
+    $('.' + field + '-copy').html(copiedString);
+  });
+  pasteRussianGender();
+};
+
+// Вставляет русское название пола, на основе value выбранного пола в селекте
+function pasteRussianGender() {
+  if (patient.gender == 'male') {
+    genderSelectedRus = 'Мужской';
+  } else if (patient.gender == 'female') {
+    genderSelectedRus = 'Женский';
+  } else {
+    genderSelectedRus = 'Ошибочка, не выбран пол!';
+  }
+  $('.gender-copy').html(genderSelectedRus);
+};
+
+//=========================================
 // Основные реакции на изменения полей
 //=========================================
 $(document).ready(function(){
@@ -196,15 +220,7 @@ $(document).ready(function(){
   // Реагируем на смену пола
   $('#gender').on('change', function() {
     patient.gender = $('#gender').val();
-    if (patient.gender == 'male') {
-      genderSelectedRus = 'Мужской';
-    } else if (patient.gender == 'female') {
-      genderSelectedRus = 'Женский';
-    } else {
-      genderSelectedRus = 'Ошибочка, не выбран пол!';
-    }
-    $('.gender-copy').html(genderSelectedRus);
-
+    pasteRussianGender();
     patient.gender && patient.ageConverted && fillReferenceValues();
   });
 
@@ -274,5 +290,6 @@ $(document).ready(function(){
     };
     fillReferenceValues();
     recalculatePercentage();
+    refillCopiedFields();
   });
 });
