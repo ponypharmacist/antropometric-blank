@@ -139,6 +139,17 @@ function fillReferenceValues() {
 }
 
 //=========================================
+// Вспоминаем рассчеты при импорте пациента
+//=========================================
+function recalculatePercentage() {
+  let percentageInputs = ['massFat', 'massLean', 'massSkeletalMuscle', 'massActiveCellular'];
+  percentageInputs.forEach(function(field, i, percentageInputs) {
+    let calculatedPercentage = (parseFloat($('#' + field).val()) / patient.weight * 100).toFixed(1) + '%';
+    $('#percentage-' + field).val(calculatedPercentage);
+  });
+};
+
+//=========================================
 // Основные реакции на изменения полей
 //=========================================
 $(document).ready(function(){
@@ -261,5 +272,7 @@ $(document).ready(function(){
     for (const prop in patient) {
       $('#' + prop).val(patient[prop]);
     };
+    fillReferenceValues();
+    recalculatePercentage();
   });
 });

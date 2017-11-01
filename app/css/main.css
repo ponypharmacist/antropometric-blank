@@ -109,7 +109,7 @@ input.form-control {
 input.medium-field { width: 120px; }
 input.short-field {  max-width: 30px; }
 input.inline-mini {  width: 90px; height: 20px; }
-input.name-field {   max-width: 286px; }
+input.name-field {   max-width: 380px; }
 
 select.select-control {
   display: inline-block;
@@ -229,6 +229,11 @@ h5 {
   top: auto;
   margin-top: auto;
   right: auto;
+}
+.h5-padded .element-remover {
+  right: auto;
+  margin-left: 10px;
+  top: 75%;
 }
 
 select.doctor-select {

@@ -28,11 +28,11 @@
 
       <h5>Бланк антропометрического обследования</h5>
       <div class="row patient-data">
-        <div class="col-6">
+        <div class="col-7">
           <label>Ф.И.О. пациента:</label>
           <input id="fullName" type="text" class="form-control name-field copied-field update-object" placeholder="Наташа Соколова" tabindex="1">
         </div>
-        <div class="col-6 text-right">
+        <div class="col-5 text-right">
           <label>Идентификационный номер:</label>
           <input id="idNumber" type="text" class="form-control medium-field copied-field update-object" placeholder="00000" tabindex="2">
         </div>
@@ -582,45 +582,77 @@
             <div class="row-like is-hideable-6-1">
               <div class="col-4 thead-col">Смещение по фронтали (мм) <a id="hideable-6-1" class="element-remover">✕</a></div>
               <div class="col-4 col-4-special">
-                <div id="shiftFrontalEyesOpen" class="col-6 input-cell"><input type="text" placeholder="..." class="form-control update-object" tabindex="80"></div>
-                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" value="0 ± 2.5 мм" class="form-control"></div>
+                <div class="col-6 input-cell">
+                  <input id="shiftFrontalEyesOpen" type="text" placeholder="..." class="form-control update-object" tabindex="80">
+                </div>
+                <div class="col-6 is-hideable-col-6-1-2 input-cell">
+                  <input type="text" value="0 ± 2.5 мм" class="form-control">
+                </div>
               </div>
               <div class="col-4 col-4-special is-hideable-col-6-2">
-                <div id="shiftFrontalEyesClosed" class="col-6 input-cell"><input type="text" placeholder="..." class="form-control update-object" tabindex="81"></div>
-                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" value="0 ± 3.1 мм" class="form-control"></div>
+                <div class="col-6 input-cell">
+                  <input id="shiftFrontalEyesClosed" type="text" placeholder="..." class="form-control update-object" tabindex="81">
+                </div>
+                <div class="col-6 is-hideable-col-6-2-2 input-cell">
+                  <input type="text" value="0 ± 3.1 мм" class="form-control">
+                </div>
               </div>
             </div>
             <div class="row-like is-hideable-6-2">
               <div class="col-4 thead-col">Смещение по сагиттали (мм) <a id="hideable-6-2" class="element-remover">✕</a></div>
               <div class="col-4 col-4-special">
-                <div id="shiftSaggitalEyesOpen" class="col-6 input-cell"><input type="text" placeholder="..." class="form-control update-object" tabindex="82"></div>
-                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" value="-40 ± 15 мм" class="form-control"></div>
+                <div class="col-6 input-cell">
+                  <input id="shiftSaggitalEyesOpen" type="text" placeholder="..." class="form-control update-object" tabindex="82">
+                </div>
+                <div class="col-6 is-hideable-col-6-1-2 input-cell">
+                  <input type="text" value="-40 ± 15 мм" class="form-control">
+                </div>
               </div>
               <div class="col-4 col-4-special is-hideable-col-6-2">
-                <div id="shiftSaggitalEyesClosed" class="col-6 input-cell"><input type="text" placeholder="..." class="form-control update-object" tabindex="83"></div>
-                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" value="-42 ± 17 мм" class="form-control"></div>
+                <div class="col-6 input-cell">
+                  <input id="shiftSaggitalEyesClosed" type="text" placeholder="..." class="form-control update-object" tabindex="83">
+                </div>
+                <div class="col-6 is-hideable-col-6-2-2 input-cell">
+                  <input type="text" value="-42 ± 17 мм" class="form-control">
+                </div>
               </div>
             </div>
             <div class="row-like is-hideable-6-3">
               <div class="col-4 thead-col">Площадь эллипса (мм<sup>2</sup>) <a id="hideable-6-3" class="element-remover">✕</a></div>
               <div class="col-4 col-4-special">
-                <div id="ellipseSquareEyesOpen" class="col-6 input-cell"><input type="text" placeholder="..." class="form-control update-object" tabindex="84"></div>
-                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" value="132" class="form-control"></div>
+                <div class="col-6 input-cell">
+                  <input id="ellipseSquareEyesOpen" type="text" placeholder="..." class="form-control update-object" tabindex="84">
+                </div>
+                <div class="col-6 is-hideable-col-6-1-2 input-cell">
+                  <input type="text" value="132" class="form-control">
+                </div>
               </div>
               <div class="col-4 col-4-special is-hideable-col-6-2">
-                <div id="ellipseSquareEyesClosed" class="col-6 input-cell"><input type="text" placeholder="..." class="form-control update-object" tabindex="85"></div>
-                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" value="164" class="form-control"></div>
+                <div class="col-6 input-cell">
+                  <input id="ellipseSquareEyesClosed" type="text" placeholder="..." class="form-control update-object" tabindex="85">
+                </div>
+                <div class="col-6 is-hideable-col-6-2-2 input-cell">
+                  <input type="text" value="164" class="form-control">
+                </div>
               </div>
             </div>
             <div class="row-like is-hideable-6-4">
               <div class="col-4 thead-col" style="font-size:85%;">Средняя скорость центра давления (мм<sup>2</sup>) <a id="hideable-6-4" class="element-remover">✕</a></div>
               <div class="col-4 col-4-special">
-                <div id="pressurePointSpeedEyesOpen" class="col-6 input-cell"><input type="text" placeholder="..." class="form-control update-object" tabindex="86"></div>
-                <div class="col-6 is-hideable-col-6-1-2 input-cell"><input type="text" value="10.4" class="form-control"></div>
+                <div class="col-6 input-cell">
+                  <input id="pressurePointSpeedEyesOpen" type="text" placeholder="..." class="form-control update-object" tabindex="86">
+                </div>
+                <div class="col-6 is-hideable-col-6-1-2 input-cell">
+                  <input type="text" value="10.4" class="form-control">
+                </div>
               </div>
               <div class="col-4 col-4-special is-hideable-col-6-2">
-                <div id="pressurePointSpeedEyesClosed" class="col-6 input-cell"><input type="text" placeholder="..." class="form-control update-object" tabindex="87"></div>
-                <div class="col-6 is-hideable-col-6-2-2 input-cell"><input type="text" value="13.6" class="form-control"></div>
+                <div class="col-6 input-cell">
+                  <input id="pressurePointSpeedEyesClosed" type="text" placeholder="..." class="form-control update-object" tabindex="87">
+                </div>
+                <div class="col-6 is-hideable-col-6-2-2 input-cell">
+                  <input type="text" value="13.6" class="form-control">
+                </div>
               </div>
             </div>
           </div>
