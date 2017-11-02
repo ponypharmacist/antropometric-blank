@@ -124,7 +124,7 @@ function calculateBMI () {
 
 // Waist-Hip-Ratio / соотношение талия-бедра
 function calculateWHR () {
-  patient.whr = (patient.waistLength / patient.hipsLength).toFixed(2);
+  patient.whr = (patient.waistLength / patient.hipLength).toFixed(2);
   $('#whr').val(patient.whr);
 };
 
@@ -144,7 +144,7 @@ function fillReferenceValues() {
 function recalculatePercentage() {
   let percentageInputs = ['massFat', 'massLean', 'massSkeletalMuscle', 'massActiveCellular'];
   percentageInputs.forEach(function(field, i, percentageInputs) {
-    if ( $('#' + field).val() == true ) {
+    if ( $('#' + field).val() >= 0 ) {
       let calculatedPercentage = (parseFloat($('#' + field).val()) / patient.weight * 100).toFixed(1) + '%';
       $('#percentage-' + field).val(calculatedPercentage);
     } else {
@@ -192,7 +192,13 @@ function refillSignatures() {
 // Вспоминаем процентили при импорте пациента
 //=========================================
 function refillPercentiles() {
-  
+  fillPercentile('handStrengthLeft','PhysicalAttributes');
+  fillPercentile('handStrengthRight','PhysicalAttributes');
+  fillPercentile('legStrengthLeft','PhysicalAttributes');
+  fillPercentile('legStrengthRight','PhysicalAttributes');
+  fillPercentile('backStrength','PhysicalAttributes');
+  fillPercentile('abdominalPress','PhysicalAttributes');
+  fillPercentile('spineFlexibility','PhysicalAttributes');
 };
 
 //=========================================
@@ -261,12 +267,12 @@ $(document).ready(function(){
   // Считаем Waist-Hip-Ratio (WHR)
   $('#waistLength').on('change', function() {
     patient.waistLength = parseFloat(this.value);
-    patient.waistLength && patient.hipsLength && calculateWHR();
+    patient.waistLength && patient.hipLength && calculateWHR();
   });
 
-  $('#hipsLength').on('change', function() {
-    patient.hipsLength = parseFloat(this.value);
-    patient.waistLength && patient.hipsLength && calculateWHR();
+  $('#hipLength').on('change', function() {
+    patient.hipLength = parseFloat(this.value);
+    patient.waistLength && patient.hipLength && calculateWHR();
   });
 
   // Считаем % от массы тела для жира, костей и активной клеточной массы
