@@ -144,8 +144,12 @@ function fillReferenceValues() {
 function recalculatePercentage() {
   let percentageInputs = ['massFat', 'massLean', 'massSkeletalMuscle', 'massActiveCellular'];
   percentageInputs.forEach(function(field, i, percentageInputs) {
-    let calculatedPercentage = (parseFloat($('#' + field).val()) / patient.weight * 100).toFixed(1) + '%';
-    $('#percentage-' + field).val(calculatedPercentage);
+    if ( $('#' + field).val() == true ) {
+      let calculatedPercentage = (parseFloat($('#' + field).val()) / patient.weight * 100).toFixed(1) + '%';
+      $('#percentage-' + field).val(calculatedPercentage);
+    } else {
+      // если нет данных в поле
+    };
   });
 };
 
@@ -171,6 +175,24 @@ function pasteRussianGender() {
     genderSelectedRus = 'Ошибочка, не выбран пол!';
   }
   $('.gender-copy').html(genderSelectedRus);
+};
+
+//=========================================
+// Вспоминаем подписи при импорте пациента
+//=========================================
+function refillSignatures() {
+  let signatureInputs = ['doctorA', 'doctorB', 'doctorC'];
+  signatureInputs.forEach(function(field, i, signatureInputs) {
+    let selectedDoctor = $('#' + field).val();
+    $("#signature-" + field).attr('class', selectedDoctor);
+  });
+};
+
+//=========================================
+// Вспоминаем процентили при импорте пациента
+//=========================================
+function refillPercentiles() {
+  
 };
 
 //=========================================
@@ -288,8 +310,10 @@ $(document).ready(function(){
     for (const prop in patient) {
       $('#' + prop).val(patient[prop]);
     };
-    fillReferenceValues();
+    patient.gender && patient.ageConverted && fillReferenceValues();
     recalculatePercentage();
     refillCopiedFields();
+    refillSignatures();
+    refillPercentiles();
   });
 });
