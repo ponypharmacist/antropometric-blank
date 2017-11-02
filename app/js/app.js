@@ -144,7 +144,7 @@ function fillReferenceValues() {
 function recalculatePercentage() {
   let percentageInputs = ['massFat', 'massLean', 'massSkeletalMuscle', 'massActiveCellular'];
   percentageInputs.forEach(function(field, i, percentageInputs) {
-    if ( $('#' + field).val() >= 0 ) {
+    if ( patient[field] >= 0 ) {
       let calculatedPercentage = (parseFloat($('#' + field).val()) / patient.weight * 100).toFixed(1) + '%';
       $('#percentage-' + field).val(calculatedPercentage);
     } else {
@@ -192,13 +192,23 @@ function refillSignatures() {
 // Вспоминаем процентили при импорте пациента
 //=========================================
 function refillPercentiles() {
-  fillPercentile('handStrengthLeft','PhysicalAttributes');
-  fillPercentile('handStrengthRight','PhysicalAttributes');
-  fillPercentile('legStrengthLeft','PhysicalAttributes');
-  fillPercentile('legStrengthRight','PhysicalAttributes');
-  fillPercentile('backStrength','PhysicalAttributes');
-  fillPercentile('abdominalPress','PhysicalAttributes');
-  fillPercentile('spineFlexibility','PhysicalAttributes');
+  let percentileParameters = [
+    ['handStrengthLeft','PhysicalAttributes'],
+    ['handStrengthRight','PhysicalAttributes'],
+    ['legStrengthLeft','PhysicalAttributes'],
+    ['legStrengthRight','PhysicalAttributes'],
+    ['backStrength','PhysicalAttributes'],
+    ['abdominalPress','PhysicalAttributes'],
+    ['spineFlexibility','PhysicalAttributes']
+  ];
+  percentileParameters.forEach(function(pair, i, percentileParameters) {
+    if ( patient[pair[0]] >= 0 ) {
+      console.log(patient[pair[0]]);
+      fillPercentile(pair[0],pair[1]);
+    } else {
+      // если нет параметра
+    }
+  });
 };
 
 //=========================================
