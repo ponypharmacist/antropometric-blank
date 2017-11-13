@@ -187,7 +187,8 @@ input:focus {
 .is-hideable-table-1 { margin-bottom: 12px; }
 .is-hideable-table-3 { margin-bottom: 20px; }
 .is-hideable-table-4 { margin-bottom: 20px; }
-
+.is-hideable-table-6 .row-like.thead-like > div { padding:5px 8px; }
+.is-hideable-table-7 .row-like.thead-like > div { padding:5px 8px; }
 
 /* Цветовая схема документа */
 h5 {

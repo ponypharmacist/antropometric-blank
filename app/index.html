@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <h5>Бланк антропометрического обследования  <a id="clearable-page-1" class="element-remover is-clearable-page-1">✕</a></h5>
+      <h5>Бланк антропометрического обследования <a id="clearable-page-1" class="element-remover is-clearable-page-1" style="right:22px;">1</a>  <a id="clearable-page-2" class="element-remover is-clearable-page-2">2</a></h5>
       <div class="row patient-data">
         <div class="col-7">
           <label>Ф.И.О. пациента:</label>
@@ -296,7 +296,7 @@
 
 
         <!-- Таблица 3. Гониометрические показатели -->
-        <div class="col-12 is-hideable-table-3">
+        <div class="col-12 is-hideable-table-3 is-clearable-page-2">
           <div class="table-like table-like-2">
             <div class="row-like thead-like">
               <div class="col-6">Гониометрические показатели <a id="hideable-table-3" class="element-remover">✕</a></div>
@@ -382,7 +382,7 @@
 
 
         <!-- Таблица 4. Физические качества -->
-        <div class="col-12 is-hideable-table-4">
+        <div class="col-12 is-hideable-table-4 is-clearable-page-2">
           <div class="table-like table-like-2">
             <div class="row-like thead-like">
               <div class="col-4">Физические качества <a id="hideable-table-4" class="element-remover">✕</a></div>
@@ -485,7 +485,7 @@
 
 
         <!-- Таблица 5. Толерантность к физическим нагрузкам -->
-        <div class="col-12 is-hideable-table-5">
+        <div class="col-12 is-hideable-table-5 is-clearable-page-2">
           <div class="table-like table-like-2">
             <div class="row-like thead-like">
               <div class="col-8">Толерантность к физическим нагрузкам <a id="hideable-table-5" class="element-remover">✕</a></div>
@@ -514,7 +514,7 @@
           </div>
         </div>
         <!-- Заключения, блок 2 -->
-        <div class="col-12 page-2-last-block">
+        <div class="col-12 page-2-last-block is-clearable-page-2">
           <h5 class="h5-padded is-hideable-h2">Заключение <a id="hideable-h2" class="element-remover">✕</a></h5>
           <p class="diagnosis-block is-hideable-d-2-1"><b>Объем движений изменен в суставах:</b> <a id="hideable-d-2-1" class="element-remover">✕</a><br/>
           <input id="conclsionBMovementLimitedInJoints" type="text" placeholder="..." class="form-control input-diagnosis update-object" tabindex="64">
@@ -529,7 +529,7 @@
           <span class="diagnosis-hint">(снижена, в пределах нормы, повышена)</span></p>
         </div>
 
-        <div class="col-7" style="position:relative;">
+        <div class="col-7 is-clearable-page-2" style="position:relative;">
             <label>Исследователь:</label>
             <select id="doctorB" class="select-control doctor-select update-object" tabindex="67">
               <option value="" selected></option>
@@ -545,7 +545,7 @@
             <span class="doctor-signature">(подпись)</span>
             <div id="signature-doctorB"></div>
         </div>
-        <div class="col-5">
+        <div class="col-5 is-clearable-page-2">
           <p>
             <label>Дата исследования:</label>
             <input id="dateB" type="text" class="form-control update-object" placeholder="..." tabindex="68">
@@ -556,18 +556,20 @@
 
 
       <!-- Лист 3 -->
-      <div class="row pagebreak is-hideable-page-3">
-        <div class="col-12">
+      <div class="pagebreak is-clearable-page-2"></div>
+
+      <div class="row is-hideable-page-3">
+        <div class="col-12 is-clearable-page-2">
           <h5>Бланк антропометрического обследования<br/>
           <span class="h5-note">(продолжение<span class="is-clearable-page-1">, лист 3 из 3</span>) <a id="hideable-page-3" class="element-remover">✕</a></span></h5>
         </div>
 
-        <div class="col-6">
+        <div class="col-6 is-clearable-page-2">
           <p>Ф.И.О. пациента: <span class="pasted-text fullName-copy"></span><br/>
           Пол: <span class="pasted-text gender-copy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>.<br/>
           Возраст: <span class="pasted-text ageYears-copy">&nbsp;&nbsp;&nbsp;</span> лет, <span class="pasted-text ageMonths-copy">0</span> мес.</p>
         </div>
-        <div class="col-6">
+        <div class="col-6 is-clearable-page-2">
           <p>Идентификационный номер: <span class="pasted-text idNumber-copy"></span><br/>
           Диагноз: <span class="pasted-text diagnosisMKB-copy"></span><br/>
           Категория: <span class="pasted-text category-copy"></span></p>
@@ -686,7 +688,7 @@
           <p class="diagnosis-block is-hideable-d-3-3"><b>Приоритетная сенсорная система</b> <a id="hideable-d-3-3" class="element-remover">✕</a><br/>
           <input id="conclusionCPrimarySensoricSystem" type="text" placeholder="..." class="form-control input-diagnosis update-object" tabindex="90">
           <span class="diagnosis-hint">(зрение, проприорецепция)</span></p>
-          <p style="margin:0;line-height:14px;">&nbsp;</p>
+          <p class="is-clearable-page-2" style="margin:0;line-height:14px;">&nbsp;</p>
         </div>
 
 
