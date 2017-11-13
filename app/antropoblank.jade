@@ -1,0 +1,830 @@
+body
+  .container-custom <!-- Все остальное в нем лежит -->
+
+<!-- Шапка с информацией об учреждении -->
+.row
+  .header
+    img.logo-rp(src="images/logo-rp.jpg" alt="Логотип НИИ" title="Логотип НИИ")
+    p
+      | Федеральное государственное бюджетное учреждение
+      br
+      b «Национальный медицинский исследовательский центр детской гематологии, онкологии и&nbsp;иммунологии имени&nbsp;Дмитрия&nbsp;Рогачева»
+      br
+      | Министерства Здравоохранения Российской Федерации
+      br
+
+      span.addresses
+        | (ФГБУ  «НМИЦ  ДГОИ им. Дмитрия Рогачева»  Минздрава России)
+        br
+        | 117198, г. Москва, ул. Саморы Машела,&nbsp;д.1.
+        br
+        | Телефон: 8&nbsp;(495)&nbsp;937-50-24, факс: 8&nbsp;(495)&nbsp;936-22-36, e-mail:&nbsp;info@niidg.ru
+        br
+        | ОКПО 13157861, ОГРН 1027739507212, ИНН/КПП 7728008953/772801001
+
+.row.patient-data
+
+.row.is-clearable-page-1
+  <!-- Таблица 1. Антропометрические показатели -->
+  .col-12.is-hideable-table-1
+    .table-like.table-like-1
+      .row-like.thead-like
+        .col-8 
+          | Антропометрические показатели 
+          a#hideable-table-1.element-remover ✕
+        .col-2.text-center Абсолютное значение
+        .col-2.text-center.is-hideable-col-1-2 
+          | Референсные значения 
+          a#hideable-col-1-2.element-remover ✕
+
+      .row-like.is-hideable-1-1
+        .col-8.thead-col
+          | Рост стоя (см) 
+          a#hideable-1-1.element-remover ✕
+        .col-2.input-cell
+          input#height.form-control(type="text" placeholder="..." maxlength="6" tabindex="10")
+        .col-2.is-hideable-col-1-2.input-cell
+          input#reference-height.form-control(type="text" placeholder="..." readonly)
+
+      .row-like.is-hideable-1-2
+        .col-8.thead-col 
+          | Рост сидя (см) 
+          a#hideable-1-2.element-remover ✕
+        .col-2.input-cell
+          input#heightSitting.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="6")
+        .col-2.is-hideable-col-1-2.input-cell
+          input#reference-heightSitting.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-1-3
+        .col-8.thead-col
+          | Вес (кг) 
+          a#hideable-1-3.element-remover ✕
+        .col-2.input-cell
+          input#weight.form-control(type="text" placeholder="..." maxlength="5" tabindex="12")
+        .col-2.is-hideable-col-1-2.input-cell
+          input#reference-weight.form-control(type="text" placeholder="..." readonly)
+
+      .row-like.is-hideable-1-4
+        .col-8.thead-col
+          | Индекс массы тела (BMI) 
+          a#hideable-1-4.element-remover ✕
+        .col-2.input-cell
+          input#bmi.form-control(type="text" placeholder="..." readonly)
+        .col-2.is-hideable-col-1-2.input-cell
+          input#reference-bmi.form-control(type="text" placeholder="..." readonly)
+
+      .row-like.is-hideable-1-5
+        .col-8.thead-col
+          | Индекс талия-окружность бедер (WHR)
+          input#waistLength.form-control.inline-mini(type="text" placeholder="Талия (см)" tabindex="14")
+          input#hipLength.form-control.inline-mini(type="text" placeholder="Бедра (см)" tabindex="15")
+          a#hideable-1-5.element-remover ✕
+        .col-2.input-cell
+          input#whr.form-control(type="text" placeholder="...")
+        .col-2.is-hideable-col-1-2.input-cell
+          input#reference-whr.form-control(type="text" placeholder="..." readonly)
+
+      .row-like.is-hideable-1-6
+        .col-8.thead-col
+          | Экскурсия грудной клетки (см) 
+          a#hideable-1-6.element-remover ✕
+        .col-2.input-cell
+          input#chestExcursion.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="4" tabindex="17")
+        .col-2.is-hideable-col-1-2.input-cell
+          input.form-control(type="text" value="3 - 4 см" readonly)
+
+      .row-like.is-hideable-1-7
+        .col-8.thead-col
+          | Разница в относительной длине ног (см) 
+          a#hideable-1-7.element-remover ✕
+        .col-2.input-cell
+          input#legLengthDifferenceRelative.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="18")
+        .col-2.is-hideable-col-1-2.input-cell
+          input.form-control(type="text" value="до 2 см" readonly)
+
+      .row-like.is-hideable-1-8
+        .col-8.thead-col
+          | Разница в абсолютной длине ног (см) 
+          a#hideable-1-8.element-remover ✕
+        .col-2.input-cell
+          input#legLengthDifferenceAbsolute.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="19")
+        .col-2.is-hideable-col-1-2.input-cell
+          input.form-control(type="text" value="до 2 см" readonly)
+
+
+  <!-- Таблица 2а: Соматоскопические показатели -->
+  .col-6.table-br.is-hideable-table-2
+    .table-like
+      .row-like.thead-like
+        .col-9 
+          | Соматоскопические показатели 
+          a#hideable-table-2.element-remover ✕
+        .col-3
+
+      .row-like.is-hideable-2-1
+        .col-9.thead-col 
+          | Деформации грудной клетки 
+          a#hideable-2-1.element-remover ✕
+        .col-3.input-cell
+          input#chestDeformation.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="20")
+
+      .row-like.is-hideable-2-2
+        .col-9.thead-col(style="font-size:90%;")
+          | Сагиттальные отклонения оси позвоночника 
+          a#hideable-2-2.element-remover ✕
+        .col-3.input-cell
+          input#spineAxisSaggitalDeviation.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="21")
+
+      .row-like.is-hideable-2-3
+        .col-9.thead-col
+          | Перекос таза 
+          a#hideable-2-3.element-remover ✕
+        .col-3.input-cell
+          input#pelvicTilt.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="22")
+
+      .row-like.is-hideable-2-4
+        .col-9.thead-col
+          | Тип дыхания 
+          a#hideable-2-4.element-remover ✕
+        .col-3.input-cell
+          input#breathingType.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="23")
+
+      .row-like.is-hideable-2-9
+        .col-9.thead-col
+          | Деформация стоп 
+          a#hideable-2-9.element-remover ✕
+        .col-3.input-cell
+          input#footDeformation.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="24")
+
+  <!-- Таблица 2b: Соматоскопические показатели -->
+  .col-6.is-hideable-table-2
+    .table-like.is-hideable-table-2-2
+      .row-like.thead-like
+        .col-9 &nbsp;
+        .col-3
+          a#hideable-table-2-2.element-remover ✕
+
+      .row-like.is-hideable-2-5
+        .col-9.thead-col 
+          | Шейный лордоз 
+          a#hideable-2-5.element-remover ✕
+        .col-3.input-cell
+          input#neckLordosis.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="25")
+
+      .row-like.is-hideable-2-6
+        .col-9.thead-col 
+          | Грудной кифоз 
+          a#hideable-2-6.element-remover ✕
+        .col-3.input-cell
+          input#chestKyphosis.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="26")
+
+      .row-like.is-hideable-2-7
+        .col-9.thead-col 
+          | Поясничный лордоз 
+          a#hideable-2-7.element-remover ✕
+        .col-3 input-cell
+          input#waistLordosis.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="27")
+
+      .row-like.is-hideable-2-8
+        .col-9.thead-col 
+          | Выпрямленная спина 
+          a#hideable-2-8.element-remover ✕
+        .col-3.input-cell
+          input#straightBack.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="28")
+
+  <!-- Заключения, блок 1 -->
+  .col-12.page-1-last-block
+    h5.h5-padded.is-hideable-h1
+      | Заключение 
+      a#hideable-h1.element-remover✕
+
+    p.diagnosis-block.is-hideable-d-1-1
+      b Физическое развитие 
+      a#hideable-d-1-1.element-remover ✕
+      br    
+      input#conclusionAPhysicalDevelopment.form-control.input-diagnosis(type="text" placeholder="..." class="update-checkpoint" tabindex="30")    
+      span.diagnosis-hint (резко снижено, снижено, в пределах поло-возрастной нормы, повышено, значительно повышено)
+  
+    p.diagnosis-block.is-hideable-d-1-2
+      b Признаки висцерального ожирения
+      a#hideable-d-1-2.element-remover ✕
+      br    
+      input#conclusionAVisceralObesitySigns.form-control.input-diagnosis(type="text" placeholder="..." class="update-checkpoint" tabindex="31")    
+      span.diagnosis-hint (отсутствуют, выражены незначительно, выражены значительно)
+  
+    p.diagnosis-block.is-hideable-d-1-3
+      b Пропорции тела
+      a#hideable-d-1-3.element-remover ✕
+      br    
+      input#conclusionABodyProportions.form-control.input-diagnosis(type="text" placeholder="..." class="update-checkpoint" tabindex="32")    
+      span.diagnosis-hint (нарушены за счет отставания нижних конечностей, отставания туловища, не нарушены)
+  
+    p.diagnosis-block.is-hideable-d-1-4
+      b Тип и глубина дыхания
+      a#hideable-d-1-4.element-remover ✕
+      br    
+      input#conclusionABreathType.form-control.input-diagnosis(type="text" placeholder="..." class="update-checkpoint" tabindex="33")    
+      span.diagnosis-hint (грудной или брюшной, симметричность экскурсии грудной клетки)
+  
+    p.diagnosis-block.is-hideable-d-1-5
+      b Деформации опорно-двигательного аппарата 
+      a#hideable-d-1-5.element-remover ✕
+      br    
+      input#conclusionASkeletalDeformations.form-control.input-diagnosis(type="text" placeholder="..." class="update-checkpoint" tabindex="34")    
+      span.diagnosis-hint (не выявлены, выявлены (какие))
+  
+  .col-7(style="position:relative;")
+      label Исследователь:
+      select#doctorA.select-control.doctor-select(class="update-checkpoint" tabindex="35")
+        option(value="" selected)
+        option(value="baerbach") Баербах А.В.
+        option(value="juk") Жук Д.В.
+        option(value="nikulin") Никулин В.А.
+        option(value="mineev") Минеев И.О.
+        option(value="krotko") Кротько К.Г.
+        option(value="olejnikova") Олейникова М.И.
+        option(value="taldykina") Талдыкина Н.В.
+        option(value="parshikov") Паршиков А.С.
+      span.doctor-signature (подпись)
+      #signature-doctorA
+  .col-5
+    p
+      label Дата исследования:
+      input#dateA.form-control(type="text" class="update-checkpoint" placeholder="..." tabindex="36")
+<!-- /row last in page 1 -->
+  
+.pagebreak.is-clearable-page-1
+
+
+<!-- Лист 2 -->
+.row.is-hideable-page-2
+  .col-12.is-clearable-page-1
+    h5
+      | Бланк антропометрического обследования
+      br
+      span.h5-note
+        | (продолжение, лист 2 из 3) 
+        a#hideable-page-2.element-remover ✕
+
+  .col-7.is-clearable-page-1
+    p
+      | Ф.И.О. пациента: 
+      span.pasted-text.fullName-copy
+      br
+      | Пол: 
+      span.pasted-text.gender-copy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      | .
+      br
+      | Возраст: 
+      span.pasted-text.ageYears-copy &nbsp;&nbsp;&nbsp;
+      | лет, 
+      span.pasted-text.ageMonths-copy 0
+      | мес.
+
+  .col-5.is-clearable-page-1
+    p
+      | Идентификационный номер: 
+      span.pasted-text.idNumber-copy
+      br
+      | Диагноз: 
+      span.pasted-text.diagnosisMKB-copy
+      br
+      | Категория: 
+      span.pasted-text.category-copy
+
+  <!-- Таблица 3. Гониометрические показатели -->
+  .col-12.is-hideable-table-3
+    .table-like.table-like-2
+      .row-like.thead-like
+        .col-6 
+          | Гониометрические показатели 
+          a#hideable-table-3.element-remover ✕
+        .col-2.text-center Абсолютное значение слева
+        .col-2.text-center Абсолютное значение справа
+        .col-2.text-center.is-hideable-col-3-3
+          | Референсные значения 
+          a#hideable-col-3-3.element-remover ✕
+
+      .row-like.is-hideable-3-1
+        .col-6.thead-col
+          | Отведение плеча с лопаткой (град.) 
+          a#hideable-3-1.element-remover ✕
+        .col-2.input-cell
+          input#angleShoulderMovementLeft.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="3" tabindex="40")
+        .col-2.input-cell
+          input#angleShoulderMovementRight.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="3" tabindex="41")
+        .col-2.input-cell.is-hideable-col-3-3
+          input.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-3-2
+        .col-6.thead-col
+          | Сгибание в локтевом суставе (град.) 
+          a#hideable-3-2.element-remover ✕
+        .col-2.input-cell
+          input#angleElbowBendLeft.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="3" tabindex="42")
+        .col-2.input-cell
+          input#angleElbowBendRight.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="3" tabindex="43")
+        .col-2.input-cell.is-hideable-col-3-3
+          input.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-3-3
+        .col-6.thead-col
+            | Разгибание предплечья (град.) 
+            a#hideable-3-3.element-remover ✕
+        .col-2.input-cell
+          input#angleForearmBendLeft.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="3" tabindex="44")
+        .col-2.input-cell
+          input#angleForearmBendRight.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="3" tabindex="45")
+        .col-2.input-cell.is-hideable-col-3-3
+          input.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-3-4
+        .col-6.thead-col
+          | Сгибание в тазобедренном суставе (град.) 
+          a#hideable-3-4.element-remover ✕
+        .col-2.input-cell
+          input#anglePelvisJointBendLeft.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="3" tabindex="46")
+        .col-2.input-cell
+          input#anglePelvisJointBendRight.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="3" tabindex="47")
+        .col-2.input-cell.is-hideable-col-3-3
+          input.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-3-5
+        .col-6.thead-col 
+          | Сгибание в коленном суставе (град.) 
+          a#hideable-3-5.element-remover ✕
+        .col-2.input-cell
+          input#angleKneeJointBendLeft.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="3" tabindex="48")
+        .col-2.input-cell
+          input#angleKneeJointBendRight.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="3" tabindex="49")
+        .col-2.is-hideable-col-3-3.input-cell
+          input.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-3-6
+        .col-6.thead-col
+          | Сгибание в голеностопном суставе (град.) 
+          a#hideable-3-6.element-remover ✕
+        .col-2.input-cell
+          input#angleAnkleJointBendLeft.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="3" tabindex="50")
+        .col-2.input-cell
+          input#angleAnkleJointBendRight.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="3" tabindex="51")
+        .col-2.input-cell.is-hideable-col-3-3
+          input.form-control(type="text" placeholder="...")
+
+
+  <!-- Таблица 4. Физические качества -->
+  .col-12.is-hideable-table-4
+    .table-like.table-like-2
+      .row-like.thead-like
+        .col-4
+          | Физические качества 
+          a#hideable-table-4.element-remover ✕
+        .col-2.text-center.is-hideable-4-col-2a
+          | Абсолютное значение слева 
+          a#hideable-4-col-2a.element-remover ✕
+        .col-2.text-center.is-hideable-4-col-3a
+          | Половозрастная процентиль 
+          a#hideable-4-col-3a.element-remover ✕
+        .col-2.text-center.is-hideable-4-col-4a
+          | Абсолютное значение справа 
+          a#hideable-4-col-4a.element-remover ✕
+        .col-2.text-center.is-hideable-4-col-5a
+          | Половозрастная процентиль 
+          a#hideable-4-col-5a.element-remover ✕
+
+      .row-like.is-hideable-4-2
+        .col-4.thead-col
+          | Мышцы рук (сек) 
+          a#hideable-4-2.element-remover ✕
+        .col-2.input-cell.is-hideable-4-col-2a
+          input#handStrengthLeft.form-control(type="text" placeholder="..." class="update-checkpoint" onchange="fillPercentile('handStrengthLeft','PhysicalAttributes');" maxlength="5" tabindex="52")
+        .col-2.input-cell.is-hideable-4-col-3a
+          input#percentile-handStrengthLeft.form-control(type="text" placeholder="...")
+        .col-2.input-cell.is-hideable-4-col-4a
+          input#handStrengthRight.form-control(type="text" placeholder="..." class="update-checkpoint" onchange="fillPercentile('handStrengthRight','PhysicalAttributes');" maxlength="5" tabindex="53")
+        .col-2.input-cell.is-hideable-4-col-5a
+          input#percentile-handStrengthRight.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-4-3
+        .col-4.thead-col
+          | Мышцы ног (сек) 
+          a#hideable-4-3.element-remover ✕
+        .col-2.input-cell.is-hideable-4-col-2a
+          input#legStrengthLeft.form-control(type="text" placeholder="..." class="update-checkpoint" onchange="fillPercentile('legStrengthLeft','PhysicalAttributes');" maxlength="5" tabindex="54")
+        .col-2.input-cell.is-hideable-4-col-3a
+          input#percentile-legStrengthLeft.form-control(type="text" placeholder="...")
+        .col-2.input-cell.is-hideable-4-col-4a
+          input#legStrengthRight.form-control(type="text" placeholder="..." class="update-checkpoint" onchange="fillPercentile('legStrengthRight','PhysicalAttributes');" maxlength="5" tabindex="55")
+        .col-2.input-cell.is-hideable-4-col-5a
+          input#percentile-legStrengthRight.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-4-6
+        .col-4.thead-col
+          | Сила кисти (кг) 
+          a#hideable-4-6.element-remover ✕
+        .col-2.input-cell.is-hideable-4-col-2a
+          input#palmStrengthLeft.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="5" tabindex="56")
+        .col-2.input-cell.is-hideable-4-col-3a
+          input.form-control(type="text" placeholder="...")
+        .col-2.input-cell.is-hideable-4-col-4a
+          input#palmStrengthRight.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="5" tabindex="57")
+        .col-2.input-cell.is-hideable-4-col-5a
+          input.form-control(type="text" placeholder="...")
+
+      .row-like.thead-like.is-hideable-table-4-subheader.is-clearable-page-1
+        .col-8 
+          a#hideable-table-4-subheader.element-remover ✕
+        .col-2.text-center Абсолютное значение
+        .col-2.text-center.is-hideable-4-col-3b
+          | Половозрастная процентиль 
+          a#hideable-4-col-3b.element-remover ✕
+
+      .row-like.is-hideable-4-1
+        .col-8.thead-col
+          | Мышцы спины (сек) 
+          a#hideable-4-1.element-remover ✕
+        .col-2.input-cell
+          input#backStrength.form-control(type="text" placeholder="..." class="update-checkpoint" onchange="fillPercentile('backStrength','PhysicalAttributes');" tabindex="58")
+        .col-2.input-cell.is-hideable-4-col-3b
+          input#percentile-backStrength.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-4-4
+        .col-8.thead-col
+          | Мышцы брюшного пресса (сек) 
+          a#hideable-4-4.element-remover ✕
+        .col-2.input-cell
+          input#abdominalPress.form-control(type="text" placeholder="..." class="update-checkpoint" onchange="fillPercentile('abdominalPress','PhysicalAttributes');" tabindex="59")
+        .col-2.input-cell.is-hideable-4-col-3b
+          input#percentile-abdominalPress.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-4-5
+        .col-8.thead-col
+          | Становая сила (кг) 
+          a#hideable-4-5.element-remover ✕
+        .col-2.input-cell
+          input#deadlift.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="60")
+        .col-2.input-cell.is-hideable-4-col-3b
+          input#percentile-deadlift.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-4-7
+        .col-8.thead-col 
+          | Гибкость позвоночника (см) 
+          a#hideable-4-7.element-remover ✕
+        .col-2.input-cell
+          input#spineFlexibility.form-control(type="text" placeholder="..." class="update-checkpoint" onchange="fillPercentile('spineFlexibility','PhysicalAttributes');" tabindex="61")
+        .col-2.input-cell.is-hideable-4-col-3b
+          input#percentile-spineFlexibility.form-control(type="text" placeholder="...")
+
+
+  <!-- Таблица 5. Толерантность к физическим нагрузкам -->
+  .col-12.is-hideable-table-5
+    .table-like.table-like-2
+      .row-like.thead-like
+        .col-8
+          | Толерантность к физическим нагрузкам 
+          a#hideable-table-5.element-remover ✕
+        .col-2.text-center Абсолютное значение
+        .col-2.text-center.is-hideable-col-5-2
+          | Референсные значения 
+          a#hideable-col-5-2.element-remover ✕
+
+      .row-like.is-hideable-5-1
+        .col-8.thead-col
+          | Пройденное расстояние (м) 
+          a#hideable-5-1.element-remover ✕
+        .col-2.input-cell
+          input#walkDistance.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="62")
+        .col-2.input-cell.is-hideable-col-5-2
+          input.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-5-2
+        .col-8.thead-col
+          | Время восстановления кардиореспираторных показателей (мин) 
+          a#hideable-5-2.element-remover ✕
+        .col-2.input-cell
+          input#cardiorespiratoryRestorationTime.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="63")
+        .col-2.input-cell.is-hideable-col-5-2
+          input.form-control(type="text" placeholder="...")
+
+  <!-- Заключения, блок 2 -->
+  .col-12.page-2-last-block
+    h5.h5-padded.is-hideable-h2
+      | Заключение 
+      a#hideable-h2.element-remover ✕
+
+    p.diagnosis-block.is-hideable-d-2-1
+      b Объем движений изменен в суставах: 
+      a#hideable-d-2-1.element-remover ✕
+      br
+      input#conclsionBMovementLimitedInJoints.form-control.input-diagnosis(type="text" placeholder="..." class="update-checkpoint" tabindex="64")
+      span.diagnosis-hint (повышен/понижен, в каких суставах)
+
+    p.diagnosis-block.is-hideable-d-2-2
+      b Силовая выносливость 
+      a#hideable-d-2-2.element-remover ✕
+      br
+      input#conclsionBStrengthEndurance.form-control.input-diagnosis(type="text" placeholder="..." class="update-checkpoint" tabindex="65")
+      span.diagnosis-hint (высокая, средняя, снижена в группах мышц)
+
+    p.diagnosis-block.is-hideable-d-2-3
+      b Переносимость физических нагрузок 
+      a#hideable-d-2-3.element-remover ✕
+      br
+      input#conclsionBPhysicalLoadEndurance.form-control.input-diagnosis(type="text" placeholder="..." class="update-checkpoint" tabindex="66")
+      span.diagnosis-hint (снижена, в пределах нормы, повышена)
+
+  .col-7(style="position:relative;")
+      label Исследователь:
+      select#doctorB.select-control.doctor-select(class="update-checkpoint" tabindex="67")
+        option(value="" selected)
+        option(value="baerbach") Баербах А.В.
+        option(value="juk") Жук Д.В.
+        option(value="nikulin") Никулин В.А.
+        option(value="mineev") Минеев И.О.
+        option(value="krotko") Кротько К.Г.
+        option(value="olejnikova") Олейникова М.И.
+        option(value="taldykina") Талдыкина Н.В.
+        option(value="parshikov") Паршиков А.С.
+      span.doctor-signature (подпись)
+      #signature-doctorB
+  .col-5
+    p
+      label Дата исследования:
+      input#dateB.form-control(type="text" class="update-checkpoint" placeholder="..." tabindex="68")
+<!-- /row page 2 -->
+
+<!-- Лист 3 -->
+.row.pagebreak.is-hideable-page-3
+  .col-12
+    h5
+      | Бланк антропометрического обследования
+      br
+      span.h5-note
+        | (продолжение
+        span.is-clearable-page-1 , лист 3 из 3
+        | ) 
+        a#hideable-page-3.element-remover ✕
+
+  .col-7.is-clearable-page-1
+    p
+      | Ф.И.О. пациента: 
+      span.pasted-text.fullName-copy
+      br
+      | Пол: 
+      span.pasted-text.gender-copy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      | .
+      br
+      | Возраст: 
+      span.pasted-text.ageYears-copy &nbsp;&nbsp;&nbsp;
+      | лет, 
+      span.pasted-text.ageMonths-copy 0
+      | мес.
+
+  .col-5.is-clearable-page-1
+    p
+      | Идентификационный номер: 
+      span.pasted-text.idNumber-copy
+      br
+      | Диагноз: 
+      span.pasted-text.diagnosisMKB-copy
+      br
+      | Категория: 
+      span.pasted-text.category-copy
+
+  <!-- Таблица 6. Стабилометрические показатели -->
+  .col-12.is-hideable-table-6
+    .table-like.table-like-2.table-like-3
+      .row-like.thead-like
+        .col-4
+          | Стабилометрические показатели 
+          a#hideable-table-6.element-remover ✕
+        .col-4.text-center Глаза открыты
+        .col-4.text-center.is-hideable-col-6-2
+          | Глаза закрыты 
+          a#hideable-col-6-2.element-remover ✕
+
+      .row-like.thead-like
+        .col-4
+        .col-4.col-4-special
+          .col-6.text-center Абсол.
+          .col-6.text-center.is-hideable-col-6-1-2
+            | Реф. значения 
+            a#hideable-col-6-1-2.element-remover ✕
+
+        .col-4.col-4-special.is-hideable-col-6-2
+          .col-6.text-center Абсол.
+          .col-6.text-center.is-hideable-col-6-2-2
+            | Реф. значения 
+            a#hideable-col-6-2-2.element-remover ✕
+
+      .row-like.is-hideable-6-1
+        .col-4.thead-col
+          | Смещение по фронтали (мм) 
+          a#hideable-6-1.element-remover ✕
+        .col-4.col-4-special
+          .col-6.input-cell
+            input#shiftFrontalEyesOpen.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="80")
+          .col-6.is-hideable-col-6-1-2.input-cell
+            input.form-control(type="text" value="0 ± 2.5 мм")
+
+        .col-4.col-4-special.is-hideable-col-6-2
+          .col-6.input-cell
+            input#shiftFrontalEyesClosed.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="81")
+          .col-6.input-cell.is-hideable-col-6-2-2
+            input.form-control(type="text" value="0 ± 3.1 мм")
+
+      .row-like.is-hideable-6-2
+        .col-4.thead-col
+          | Смещение по сагиттали (мм) 
+          a#hideable-6-2.element-remover ✕
+        .col-4.col-4-special
+          .col-6.input-cell
+            input#shiftSaggitalEyesOpen.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="82")
+          .col-6.input-cell.is-hideable-col-6-1-2
+            input.form-control(type="text" value="-40 ± 15 мм")
+
+        .col-4.col-4-special.is-hideable-col-6-2
+          .col-6.input-cell
+            input#shiftSaggitalEyesClosed.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="83")
+          .col-6.input-cell.is-hideable-col-6-2-2
+            input.form-control(type="text" value="-42 ± 17 мм")
+
+      .row-like.is-hideable-6-3
+        .col-4.thead-col
+          | Площадь эллипса (мм
+          sup 2
+          | )
+          a#hideable-6-3.element-remover ✕
+        .col-4.col-4-special
+          .col-6.input-cell
+            input#ellipseSquareEyesOpen.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="84")
+          .col-6.input-cell.is-hideable-col-6-1-2
+
+        .col-4.col-4-special.is-hideable-col-6-2
+          .col-6.input-cell
+            input#ellipseSquareEyesClosed.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="85")
+          .col-6.input-cell.is-hideable-col-6-2-2
+            input.form-control(type="text" value="164")
+
+      .row-like.is-hideable-6-4
+        .col-4.thead-col(style="font-size:85%;")
+          | Средняя скорость центра давления (мм
+          sup 2
+          | ) 
+          a#hideable-6-4.element-remover ✕
+        .col-4.col-4-special
+          .col-6.input-cell
+            input#pressurePointSpeedEyesOpen.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="86")
+          .col-6.input-cell.is-hideable-col-6-1-2
+            input.form-control(type="text" value="10.4")
+
+        .col-4.col-4-special.is-hideable-col-6-2
+          .col-6.input-cell
+            input#pressurePointSpeedEyesClosed.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="87")
+          .col-6.input-cell.is-hideable-col-6-2-2
+            input.form-control(type="text" value="13.6")
+
+
+  .col-12
+    h5.h5-padded.is-hideable-h3 
+      | Заключение по постуральному контролю 
+      a#hideable-h3.element-remover ✕
+
+    p.diagnosis-block.is-hideable-d-3-1
+      b Положение центра давления
+      a#hideable-d-3-1.element-remover ✕
+      br
+      input#conclusionCPressureCenterPosition.form-control.input-diagnosis(type="text" placeholder="..." class="update-checkpoint" tabindex="88")
+      span.diagnosis-hint (правильное, смещение по сагиттали, фронтали)
+
+    p.diagnosis-block.is-hideable-d-3-2
+      b Стабильность баланса
+      a#hideable-d-3-2.element-remover ✕
+      br
+      input#conclusionCBalanceStability.form-control.input-diagnosis(type="text" placeholder="..." class="update-checkpoint" tabindex="89")
+      span.diagnosis-hint (высокая, средняя, низкая)
+
+    p.diagnosis-block.is-hideable-d-3-3
+      b Приоритетная сенсорная система
+      a#hideable-d-3-3.element-remover ✕
+      br
+      input#conclusionCPrimarySensoricSystem.form-control.input-diagnosis(type="text" placeholder="..." class="update-checkpoint" tabindex="90")
+      span.diagnosis-hint (зрение, проприорецепция)
+    
+    p(style="margin:0;line-height:14px;") &nbsp;
+
+
+  <!-- Таблица 7. Биоимпеданс -->
+  .col-12.is-hideable-table-7
+    .table-like.table-like-2
+      .row-like.thead-like
+        .col-6
+          | Биоимпеданс 
+          a#hideable-table-7.element-remover ✕
+        .col-2.text-center Абсолютное значение
+        .col-2.text-center.is-hideable-col-7-2 
+          | % к массе тела 
+          a#hideable-col-7-2.element-remover ✕
+        .col-2.text-center.is-hideable-col-7-3 
+          | Половозрастная процентиль 
+          a#hideable-col-7-3.element-remover ✕
+
+      .row-like.is-hideable-7-1
+        .col-6.thead-col 
+          | Жировая масса (кг) 
+          a#hideable-7-1.element-remover ✕
+        .col-2.input-cell
+          input#massFat.form-control(type="text" placeholder="..." class="calculate-percentage update-checkpoint" tabindex="91")
+        .col-2.input-cell.is-hideable-col-7-2
+          input#percentage-massFat.form-control(type="text" placeholder="...")
+        .col-2.input-cell.is-hideable-col-7-3
+          input.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-7-2
+        .col-6.thead-col
+          | Тощая масса (кг) 
+          a#hideable-7-2.element-remover ✕
+        .col-2.input-cell
+          input#massLean.form-control(type="text" placeholder="..." class="calculate-percentage update-checkpoint" tabindex="92")
+        .col-2.input-cell.is-hideable-col-7-2
+          input#percentage-massLean.form-control(type="text" placeholder="...")
+        .col-2.input-cell.is-hideable-col-7-3
+          input.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-7-3
+        .col-6.thead-col
+          | Скелетно-мышечная масса 
+          a#hideable-7-3.element-remover ✕
+        .col-2.input-cell
+          input#massSkeletalMuscle.form-control(type="text" placeholder="..." class="calculate-percentage update-checkpoint" tabindex="93")
+        .col-2.input-cell.is-hideable-col-7-2
+          input#percentage-massSkeletalMuscle.form-control(type="text" placeholder="...")
+        .col-2.input-cell.is-hideable-col-7-3
+          input.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-7-4
+        .col-6.thead-col 
+          | Активная клеточная масса (кг) 
+          a#hideable-7-4.element-remover ✕
+        .col-2.input-cell
+          input#massActiveCellular.form-control(type="text" placeholder="..." class="calculate-percentage update-checkpoint" tabindex="94")
+        .col-2.input-cell.is-hideable-col-7-2
+          input#percentage-massActiveCellular.form-control(type="text" placeholder="...")
+        .col-2.input-cell.is-hideable-col-7-3
+          input.form-control(type="text" placeholder="...")
+
+      .row-like.is-hideable-7-5
+        .col-6.thead-col 
+          | Фазовый угол (градусы) 
+          a#hideable-7-5.element-remover ✕
+        .col-2.input-cell
+          input#phasicAngle.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="5" tabindex="95")
+        .col-2.input-cell.is-hideable-col-7-2 &nbsp;
+        .col-2.input-cell.is-hideable-col-7-3
+          input.form-control(type="text" placeholder="...")
+
+  <!-- Заключения, блок 4 -->
+  div.col-12.page-3-last-block
+    h5.h5-padded.is-hideable-h4
+      | Заключение 
+      a#hideable-h4.element-remover ✕
+    
+    p.diagnosis-block.is-hideable-d-4-1
+      b Уровень готовности к физическим нагрузкам
+      a#hideable-d-4-1.element-remover ✕
+      br
+      input#conclusionDPhysicalLoadReadinessLevel.form-control.input-diagnosis(type="text" placeholder="..." class="update-checkpoint" tabindex="96")
+      span.diagnosis-hint (высокая, средняя, низкая)
+
+    p.diagnosis-block.is-hideable-d-4-2
+      b Уровень двигательной активности
+      a#hideable-d-4-2.element-remover ✕
+      br
+      input#conclusionDPhysicalActivityLevel.form-control.input-diagnosis(type="text" placeholder="..." class="update-checkpoint" tabindex="97")
+      span.diagnosis-hint (снижен, адекватен, повышен)
+
+    p.diagnosis-block.is-hideable-d-4-3
+      b Риск развития метаболического синдрома
+      a#hideable-d-4-3.element-remover ✕
+      br
+      input#conclusionDMetabolicSyndromDevelopmentRisk.form-control.input-diagnosis(type="text" placeholder="..." class="update-checkpoint" tabindex="98")
+      span.diagnosis-hint (есть, нет)
+
+  .col-7(style="position:relative;")
+      label Исследователь:
+      select#doctorC.select-control.doctor-select(class="update-checkpoint" tabindex="99")
+        option(value="" selected)
+        option(value="baerbach") Баербах А.В.
+        option(value="juk") Жук Д.В.
+        option(value="nikulin") Никулин В.А.
+        option(value="mineev") Минеев И.О.
+        option(value="krotko") Кротько К.Г.
+        option(value="olejnikova") Олейникова М.И.
+        option(value="taldykina") Талдыкина Н.В.
+        option(value="parshikov") Паршиков А.С.
+      span.doctor-signature (подпись)
+      #signature-doctorC
+  .col-5
+    p
+      label Дата исследования:
+      input#dateC.form-control(type="text" class="update-checkpoint" placeholder="..." tabindex="100")
