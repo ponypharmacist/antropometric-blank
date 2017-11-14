@@ -29,17 +29,14 @@ body
   .col-12.is-hideable-table-1
     .table-like.table-like-1
       .row-like.thead-like
-        .col-8 
-          | Антропометрические показатели 
+        .col-8 Антропометрические показатели 
           a#hideable-table-1.element-remover ✕
         .col-2.text-center Абсолютное значение
-        .col-2.text-center.is-hideable-col-1-2 
-          | Референсные значения 
+        .col-2.text-center.is-hideable-col-1-2 Референсные значения 
           a#hideable-col-1-2.element-remover ✕
 
       .row-like.is-hideable-1-1
-        .col-8.thead-col
-          | Рост стоя (см) 
+        .col-8.thead-col Рост стоя (см) 
           a#hideable-1-1.element-remover ✕
         .col-2.input-cell
           input#height.form-control(type="text" placeholder="..." maxlength="6" tabindex="10")
@@ -47,8 +44,7 @@ body
           input#reference-height.form-control(type="text" placeholder="..." readonly)
 
       .row-like.is-hideable-1-2
-        .col-8.thead-col 
-          | Рост сидя (см) 
+        .col-8.thead-col Рост сидя (см) 
           a#hideable-1-2.element-remover ✕
         .col-2.input-cell
           input#heightSitting.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="6")
@@ -56,8 +52,7 @@ body
           input#reference-heightSitting.form-control(type="text" placeholder="...")
 
       .row-like.is-hideable-1-3
-        .col-8.thead-col
-          | Вес (кг) 
+        .col-8.thead-col Вес (кг) 
           a#hideable-1-3.element-remover ✕
         .col-2.input-cell
           input#weight.form-control(type="text" placeholder="..." maxlength="5" tabindex="12")
@@ -65,8 +60,7 @@ body
           input#reference-weight.form-control(type="text" placeholder="..." readonly)
 
       .row-like.is-hideable-1-4
-        .col-8.thead-col
-          | Индекс массы тела (BMI) 
+        .col-8.thead-col Индекс массы тела (BMI) 
           a#hideable-1-4.element-remover ✕
         .col-2.input-cell
           input#bmi.form-control(type="text" placeholder="..." readonly)
@@ -74,8 +68,7 @@ body
           input#reference-bmi.form-control(type="text" placeholder="..." readonly)
 
       .row-like.is-hideable-1-5
-        .col-8.thead-col
-          | Индекс талия-окружность бедер (WHR)
+        .col-8.thead-col Индекс талия-окружность бедер (WHR)
           input#waistLength.form-control.inline-mini(type="text" placeholder="Талия (см)" tabindex="14")
           input#hipLength.form-control.inline-mini(type="text" placeholder="Бедра (см)" tabindex="15")
           a#hideable-1-5.element-remover ✕
@@ -85,8 +78,7 @@ body
           input#reference-whr.form-control(type="text" placeholder="..." readonly)
 
       .row-like.is-hideable-1-6
-        .col-8.thead-col
-          | Экскурсия грудной клетки (см) 
+        .col-8.thead-col Экскурсия грудной клетки (см) 
           a#hideable-1-6.element-remover ✕
         .col-2.input-cell
           input#chestExcursion.form-control(type="text" placeholder="..." class="update-checkpoint" maxlength="4" tabindex="17")
@@ -94,8 +86,7 @@ body
           input.form-control(type="text" value="3 - 4 см" readonly)
 
       .row-like.is-hideable-1-7
-        .col-8.thead-col
-          | Разница в относительной длине ног (см) 
+        .col-8.thead-col Разница в относительной длине ног (см) 
           a#hideable-1-7.element-remover ✕
         .col-2.input-cell
           input#legLengthDifferenceRelative.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="18")
@@ -103,14 +94,12 @@ body
           input.form-control(type="text" value="до 2 см" readonly)
 
       .row-like.is-hideable-1-8
-        .col-8.thead-col
-          | Разница в абсолютной длине ног (см) 
+        .col-8.thead-col Разница в абсолютной длине ног (см) 
           a#hideable-1-8.element-remover ✕
         .col-2.input-cell
           input#legLengthDifferenceAbsolute.form-control(type="text" placeholder="..." class="update-checkpoint" tabindex="19")
         .col-2.is-hideable-col-1-2.input-cell
           input.form-control(type="text" value="до 2 см" readonly)
-
 
   <!-- Таблица 2а: Соматоскопические показатели -->
   .col-6.table-br.is-hideable-table-2
@@ -371,7 +360,6 @@ body
         .col-2.input-cell.is-hideable-col-3-3
           input.form-control(type="text" placeholder="...")
 
-
   <!-- Таблица 4. Физические качества -->
   .col-12.is-hideable-table-4
     .table-like.table-like-2
@@ -474,7 +462,6 @@ body
           input#spineFlexibility.form-control(type="text" placeholder="..." class="update-checkpoint" onchange="fillPercentile('spineFlexibility','PhysicalAttributes');" tabindex="61")
         .col-2.input-cell.is-hideable-4-col-3b
           input#percentile-spineFlexibility.form-control(type="text" placeholder="...")
-
 
   <!-- Таблица 5. Толерантность к физическим нагрузкам -->
   .col-12.is-hideable-table-5
@@ -684,7 +671,6 @@ body
           .col-6.input-cell.is-hideable-col-6-2-2
             input.form-control(type="text" value="13.6")
 
-
   .col-12
     h5.h5-padded.is-hideable-h3 
       | Заключение по постуральному контролю 
@@ -712,7 +698,6 @@ body
       span.diagnosis-hint (зрение, проприорецепция)
     
     p(style="margin:0;line-height:14px;") &nbsp;
-
 
   <!-- Таблица 7. Биоимпеданс -->
   .col-12.is-hideable-table-7
