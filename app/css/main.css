@@ -105,6 +105,14 @@ input.form-control {
   height: 32px;
   padding: 8px 6px;
 }
+textarea.form-control {
+  display: inline-block;
+  border: none;
+  background-color: rgba(0,0,0,0.05);
+  height: 32px;
+  padding: 8px 6px;
+  line-height: 16px;
+}
 
 input.medium-field { width: 120px; }
 input.short-field {  max-width: 30px; }
@@ -141,6 +149,12 @@ input.input-diagnosis {
   width: 100%;
   max-width: 100%;
   padding: 12px 6px;
+}
+
+textarea.input-diagnosis {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 input:focus {
@@ -334,7 +348,12 @@ select.doctor-select {
     height: 32px;
     line-height: 32px;
   }
-  input.form-control::placeholder {
+  textarea.form-control {
+    border: none;
+    padding: 0;
+  }
+  input.form-control::placeholder,
+  textarea.form-control::placeholder {
     color: transparent;
   }
   input.input-diagnosis {
@@ -365,6 +384,9 @@ select.doctor-select {
   }
   .page-1-last-block {
     height: 410px;
+  }
+  textarea {
+    resize: none;
   }
 
   .debug-area { display: none; }
