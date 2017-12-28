@@ -184,6 +184,12 @@ input:focus {
   min-width: 33.32%;
   max-width: 49.98%;
 }
+.table-like-4 .col-4 {
+  max-width: 66.65%;
+}
+.table-like-4 .col-2 {
+  max-width: 16.65%;
+}
 .table-like-3 .col-4-special {
   padding: 0;
   display: flex;
@@ -348,9 +354,11 @@ select.doctor-select {
     height: 32px;
     line-height: 32px;
   }
-  textarea.form-control {
+  textarea.input-diagnosis {
     border: none;
     padding: 0;
+    position: relative;
+    z-index: 10;
   }
   input.form-control::placeholder,
   textarea.form-control::placeholder {
@@ -387,6 +395,10 @@ select.doctor-select {
   }
   textarea {
     resize: none;
+  }
+  .diagnosis-block {
+    padding: 0;
+    margin: 0;
   }
 
   .debug-area { display: none; }
